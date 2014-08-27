@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="DevLake.MasterDetail.Service.CustomerService" CodeBehind="CustomerService.svc.cs" %>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="DevLake.MasterDetail.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:DevLake.MasterDetail.UI.View" 
+        xmlns:vm="clr-namespace:DevLake.MasterDetail.UI.ViewModel"
+        Title="DevLake WPF Master Detail" Height="500" Width="330" Icon="favicon.ico">
+
+    <Window.Resources>
+        <DataTemplate x:Key="CustomerListTemplate" >
+            <v:CustomerListView/>
+        </DataTemplate>
+        <DataTemplate x:Key="OrderListTemplate" >
+            <v:OrderListView/>
+        </DataTemplate>
+    </Window.Resources>   
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Content="{Binding}" ContentTemplate="{StaticResource CustomerListTemplate}" Grid.Column="1" Grid.Row="0" />
+
+        <ContentControl Content="{Binding SelectedCustomer}" ContentTemplate="{StaticResource OrderListTemplate}" Grid.Column="1" Grid.Row="1" />
+        
+    </Grid>
+</Window>

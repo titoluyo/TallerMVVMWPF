@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfModelValidation1", "WpfModelValidation1\WpfModelValidation1.csproj", "{D923FD16-8451-402F-9BDF-9E897D21C2EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfModelValidation2", "WpfModelValidation2\WpfModelValidation2.csproj", "{79C0EFF8-EEE6-4CB4-8A45-085AD822F652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfModelValidation3", "WpfModelValidation3\WpfModelValidation3.csproj", "{1B09D1E1-FDE7-42A4-A1E6-90B40E1DCF6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D923FD16-8451-402F-9BDF-9E897D21C2EA}.Debug|x86.ActiveCfg = Debug|x86
+		{D923FD16-8451-402F-9BDF-9E897D21C2EA}.Debug|x86.Build.0 = Debug|x86
+		{D923FD16-8451-402F-9BDF-9E897D21C2EA}.Release|x86.ActiveCfg = Release|x86
+		{D923FD16-8451-402F-9BDF-9E897D21C2EA}.Release|x86.Build.0 = Release|x86
+		{79C0EFF8-EEE6-4CB4-8A45-085AD822F652}.Debug|x86.ActiveCfg = Debug|x86
+		{79C0EFF8-EEE6-4CB4-8A45-085AD822F652}.Debug|x86.Build.0 = Debug|x86
+		{79C0EFF8-EEE6-4CB4-8A45-085AD822F652}.Release|x86.ActiveCfg = Release|x86
+		{79C0EFF8-EEE6-4CB4-8A45-085AD822F652}.Release|x86.Build.0 = Release|x86
+		{1B09D1E1-FDE7-42A4-A1E6-90B40E1DCF6C}.Debug|x86.ActiveCfg = Debug|x86
+		{1B09D1E1-FDE7-42A4-A1E6-90B40E1DCF6C}.Debug|x86.Build.0 = Debug|x86
+		{1B09D1E1-FDE7-42A4-A1E6-90B40E1DCF6C}.Release|x86.ActiveCfg = Release|x86
+		{1B09D1E1-FDE7-42A4-A1E6-90B40E1DCF6C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

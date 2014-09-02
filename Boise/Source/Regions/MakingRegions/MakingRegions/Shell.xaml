@@ -1,0 +1,64 @@
+﻿<Window x:Class="MakingRegions.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism" 
+        xmlns:themes="clr-namespace:WPF.Themes;assembly=WPF.Themes" 
+        xmlns:Common="clr-namespace:Common;assembly=Common" 
+        xmlns:local="clr-namespace:MakingRegions.Controls" 
+        Title="MainWindow" Height="350" Width="525"
+        themes:ThemeManager.Theme="BureauBlue"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        >
+    <Window.Resources>
+        <Style x:Key="HeaderText" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Heavy" />
+            <Setter Property="FontFamily" Value="Portable User Interface"/>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="TabHeaderStyle" TargetType="{x:Type TabItem}">
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, Path=Content.ViewName}"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"  />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <TextBlock  Style="{StaticResource HeaderText}">Shell</TextBlock>
+            <TextBox x:Name="RegionContext">Some Context</TextBox>
+        </StackPanel>
+
+        <local:RegionBorderControl RegionName="{x:Static Common:RegionNames.NavigationRegion}" Grid.Column="0" Grid.Row="1" >
+            <ListBox
+                prism:RegionManager.RegionName="{x:Static Common:RegionNames.NavigationRegion}">
+            </ListBox>
+        </local:RegionBorderControl>
+
+        <local:RegionBorderControl RegionName="{x:Static Common:RegionNames.ContentRegion}" Grid.Column="1" Grid.Row="1" >
+            <TabControl
+                ItemContainerStyle="{DynamicResource TabHeaderStyle}"
+                prism:RegionManager.RegionName="{x:Static Common:RegionNames.ContentRegion}"
+                prism:RegionManager.RegionContext="{Binding ElementName=RegionContext, Path=Text}">
+            </TabControl>
+        </local:RegionBorderControl>
+    </Grid>
+</Window>

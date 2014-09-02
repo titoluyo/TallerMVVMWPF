@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:SearchEntry="clr-namespace:CookMe.Controls.SearchEntry" x:Class="CookMe.Controls.SearchEntry.c__prj_cookme_cookme_controls_searchentry_searchentryresourcedictionary_xaml">
+
+    <!--Brushes-->
+    <SolidColorBrush x:Key="filterTextControlBorderBrush" Color="Black" />
+    <SolidColorBrush x:Key="filterTextBrush" Color="White" />
+    <SolidColorBrush x:Key="filterWatermarkBrush" Color="Gray" />
+    <SolidColorBrush x:Key="filterTextCaretBrush" Color="White" />
+
+    <!--Control Styles-->
+    <Style x:Key="filterBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource filterTextControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4,0,4,4" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Margin" Value="7,11,7,7" />
+    </Style>
+
+    <Style x:Key="filterTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="2,1,2,2" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{StaticResource filterTextBrush}" />
+    </Style>
+
+    <Style x:Key="filterResetButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Gray" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style TargetType="{x:Type SearchEntry:SearchEntry}">
+        <Setter Property="FilterBorderStyle" Value="{StaticResource filterBorderStyle}" />
+        <Setter Property="FilterResetButtonStyle" Value="{StaticResource filterResetButtonStyle}" />
+        <Setter Property="FilterTextBoxStyle" Value="{StaticResource filterTextBoxStyle}" />
+        <Setter Property="FilterTextBoxWaterMarkText" Value="No Filter" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type SearchEntry:SearchEntry}">
+                    <Border Style="{TemplateBinding FilterBorderStyle}">
+                        <DockPanel>
+                            <!--this is a hack to enable ALT + (?) hot key to set focus to the search TextBox-->
+                            <Label Target="{Binding ElementName=PART_FilterTextBox}" Content="{TemplateBinding AccessKeyText}" Width="0" />
+                            <Button ToolTip="Click to clear the search text" x:Name="PART_FilterResetButton" VerticalAlignment="Center" DockPanel.Dock="Right" Content="X" Style="{TemplateBinding FilterResetButtonStyle}" />
+                            <Grid>
+                                <TextBox CaretBrush="{StaticResource filterTextCaretBrush}" x:Name="PART_FilterTextBox" UndoLimit="4" Text="{Binding Path=FilterText, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type SearchEntry:SearchEntry}}}" DockPanel.Dock="Left" Style="{TemplateBinding FilterTextBoxStyle}" />
+                                <TextBlock IsHitTestVisible="False" Visibility="Collapsed" x:Name="tbWatermark" Margin="7,0,0,0" Foreground="{StaticResource filterWatermarkBrush}" Text="{TemplateBinding FilterTextBoxWaterMarkText}" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                </TextBlock>
+                            </Grid>
+
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <!--I like the control better when the watermark shows up until the user types something
+                                    You can always change it by uncommenting this code.  I've left it as a multitrigge to make it easy for you-->
+                                <!--<Condition SourceName="PART_FilterTextBox" Property="TextBox.IsFocused" Value="false" />-->
+                                <Condition SourceName="PART_FilterTextBox" Property="TextBox.Text" Value="" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="tbWatermark" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="PART_FilterResetButton" Property="Visibility" Value="Hidden" />
+                        </MultiTrigger>
+                        <Trigger SourceName="PART_FilterTextBox" Property="TextBox.Text" Value="" >
+                            <Setter TargetName="PART_FilterResetButton" Property="Visibility" Value="Hidden" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

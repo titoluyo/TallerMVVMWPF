@@ -1,0 +1,12 @@
+This application uses a an oData Web Service.
+
+You MUST start the web service before starting the application.
+
+Right click on the Web\ThePhoneCompant.DataService.ThePhoneCompanyService.svc, select view in browser
+
+The Press F5 or CTRL+F5 to run the application.
+
+IE9 Users - IE9 Beta does not have the best experience when working with ASP.NET Web Services.
+Many times will take forever, seem like it's not doing anything and will then come back to life.
+If you get an error, just press refresh, then ignore the message about a root folder.  You can
+now run the application.

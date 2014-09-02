@@ -1,0 +1,42 @@
+﻿<UserControl 
+    xmlns:views="clr-namespace:ThePhoneCompany.Inventory.Views"
+    x:Class="ThePhoneCompany.Inventory.Views.CategoryView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="500">
+
+    <Grid d:DataContext="{d:DesignData Source=/SampleData/CategoryViewModelSampleData.xaml}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Category Maintenance" Grid.ColumnSpan="2" />
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" Content="Category ID" Margin="3" />
+            <Label Grid.Column="0" Grid.Row="1" Content="Description" Margin="3" />
+
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Path=Category.CategoryID}" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=Category.Description, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Margin="3" />
+            <Button Command="{Binding Path=CloseCommand}" Content="Close" Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="3,11" VerticalAlignment="Top" Width="75" />
+        </Grid>
+    </Grid>
+
+</UserControl>

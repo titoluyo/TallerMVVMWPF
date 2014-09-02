@@ -1,0 +1,27 @@
+﻿CREATE PROC SystemGetIndexColumnNames
+(
+	@INDEXNAME varchar(250),
+	@RETURN_CODE int out
+)
+
+AS
+
+-- SystemGetIndexColumnNames 'IX_uom_UnitOfMeasure', NULL
+
+SET NOCOUNT ON
+
+DECLARE @RETURN_INDEXNAMES varchar(500)
+DECLARE @RETURN int
+
+SELECT @RETURN_INDEXNAMES = COALESCE(@RETURN_INDEXNAMES + ', ', '') + AC.name
+FROM sys.indexes I
+ INNER JOIN sys.index_columns IC ON I.object_id = IC.object_id AND I.index_id = IC.index_id
+ INNER JOIN sys.all_columns AC ON IC.object_id = AC.object_id AND IC.column_id = AC.column_id
+WHERE I.name = @INDEXNAME
+SET @RETURN = @@ROWCOUNT
+
+SET @RETURN_CODE = dbo.GetReturnValue('success')
+SELECT @RETURN_INDEXNAMES
+RETURN @RETURN
+
+

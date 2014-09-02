@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CookMeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CookMeModelStoreContainer">
+          <EntitySet Name="Directions" EntityType="CookMeModel.Store.Directions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ingredient" EntityType="CookMeModel.Store.Ingredient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Note" EntityType="CookMeModel.Store.Note" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Recipe" EntityType="CookMeModel.Store.Recipe" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Directions_Recipe" Association="CookMeModel.Store.FK_Directions_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="Directions" EntitySet="Directions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingredient_Recipe" Association="CookMeModel.Store.FK_Ingredient_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="Ingredient" EntitySet="Ingredient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Note_Note" Association="CookMeModel.Store.FK_Note_Note">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="Note" EntitySet="Note" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Directions">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+            <PropertyRef Name="DirectionId" />
+          </Key>
+          <Property Name="RecipeId" Type="int" Nullable="false" />
+          <Property Name="DirectionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Instruction" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+            <PropertyRef Name="IngredientId" />
+          </Key>
+          <Property Name="RecipeId" Type="int" Nullable="false" />
+          <Property Name="IngredientId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Quantity" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Measurement" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="IngredientName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Preparation" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+            <PropertyRef Name="NoteId" />
+          </Key>
+          <Property Name="RecipeId" Type="int" Nullable="false" />
+          <Property Name="NoteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+          </Key>
+          <Property Name="RecipeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ShortTitle" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Source" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Servings" Type="int" />
+          <Property Name="PreperationTime" Type="int" Nullable="false" />
+          <Property Name="CookTime" Type="int" Nullable="false" />
+          <Property Name="Rating" Type="float" Nullable="false" />
+          <Property Name="IsFavorite" Type="int" Nullable="false" />
+          <Property Name="Calories" Type="int" />
+          <Property Name="TotalFat" Type="int" />
+          <Property Name="SaturatedFat" Type="int" />
+          <Property Name="Carbohydrates" Type="int" />
+          <Property Name="Fiber" Type="int" />
+          <Property Name="Protien" Type="int" />
+          <Property Name="VitaminC" Type="int" />
+          <Property Name="Calcium" Type="int" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Directions_Recipe">
+          <End Role="Recipe" Type="CookMeModel.Store.Recipe" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Directions" Type="CookMeModel.Store.Directions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeId" />
+            </Principal>
+            <Dependent Role="Directions">
+              <PropertyRef Name="RecipeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingredient_Recipe">
+          <End Role="Recipe" Type="CookMeModel.Store.Recipe" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Ingredient" Type="CookMeModel.Store.Ingredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeId" />
+            </Principal>
+            <Dependent Role="Ingredient">
+              <PropertyRef Name="RecipeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Note_Note">
+          <End Role="Recipe" Type="CookMeModel.Store.Recipe" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Note" Type="CookMeModel.Store.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeId" />
+            </Principal>
+            <Dependent Role="Note">
+              <PropertyRef Name="RecipeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CookMeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CookMeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Directions" EntityType="CookMeModel.Direction" />
+          <EntitySet Name="Ingredients" EntityType="CookMeModel.Ingredient" />
+          <EntitySet Name="Notes" EntityType="CookMeModel.Note" />
+          <EntitySet Name="Recipes" EntityType="CookMeModel.Recipe" />
+          <AssociationSet Name="FK_Directions_Recipe" Association="CookMeModel.FK_Directions_Recipe">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="Directions" EntitySet="Directions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingredient_Recipe" Association="CookMeModel.FK_Ingredient_Recipe">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="Ingredient" EntitySet="Ingredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Note_Note" Association="CookMeModel.FK_Note_Note">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="Note" EntitySet="Notes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Direction">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+            <PropertyRef Name="DirectionId" />
+          </Key>
+          <Property Name="RecipeId" Type="Int32" Nullable="false" />
+          <Property Name="DirectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Instruction" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Rank" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Recipe" Relationship="CookMeModel.FK_Directions_Recipe" FromRole="Directions" ToRole="Recipe" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+            <PropertyRef Name="IngredientId" />
+          </Key>
+          <Property Name="RecipeId" Type="Int32" Nullable="false" />
+          <Property Name="IngredientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Quantity" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Measurement" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="IngredientName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Preparation" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Recipe" Relationship="CookMeModel.FK_Ingredient_Recipe" FromRole="Ingredient" ToRole="Recipe" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+            <PropertyRef Name="NoteId" />
+          </Key>
+          <Property Name="RecipeId" Type="Int32" Nullable="false" />
+          <Property Name="NoteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" />
+          <NavigationProperty Name="Recipe" Relationship="CookMeModel.FK_Note_Note" FromRole="Note" ToRole="Recipe" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+          </Key>
+          <Property Name="RecipeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ShortTitle" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Servings" Type="Int32" />
+          <Property Name="PreperationTime" Type="Int32" Nullable="false" />
+          <Property Name="CookTime" Type="Int32" Nullable="false" />
+          <Property Name="Rating" Type="Double" Nullable="false" />
+          <Property Name="IsFavorite" Type="Int32" Nullable="false" />
+          <Property Name="Calories" Type="Int32" />
+          <Property Name="TotalFat" Type="Int32" />
+          <Property Name="SaturatedFat" Type="Int32" />
+          <Property Name="Carbohydrates" Type="Int32" />
+          <Property Name="Fiber" Type="Int32" />
+          <Property Name="Protien" Type="Int32" />
+          <Property Name="VitaminC" Type="Int32" />
+          <Property Name="Calcium" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" />
+          <NavigationProperty Name="Directions" Relationship="CookMeModel.FK_Directions_Recipe" FromRole="Recipe" ToRole="Directions" />
+          <NavigationProperty Name="Ingredients" Relationship="CookMeModel.FK_Ingredient_Recipe" FromRole="Recipe" ToRole="Ingredient" />
+          <NavigationProperty Name="Notes" Relationship="CookMeModel.FK_Note_Note" FromRole="Recipe" ToRole="Note" />
+        </EntityType>
+        <Association Name="FK_Directions_Recipe">
+          <End Role="Recipe" Type="CookMeModel.Recipe" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Directions" Type="CookMeModel.Direction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeId" />
+            </Principal>
+            <Dependent Role="Directions">
+              <PropertyRef Name="RecipeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingredient_Recipe">
+          <End Role="Recipe" Type="CookMeModel.Recipe" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Ingredient" Type="CookMeModel.Ingredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeId" />
+            </Principal>
+            <Dependent Role="Ingredient">
+              <PropertyRef Name="RecipeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Note_Note">
+          <End Role="Recipe" Type="CookMeModel.Recipe" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Note" Type="CookMeModel.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeId" />
+            </Principal>
+            <Dependent Role="Note">
+              <PropertyRef Name="RecipeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CookMeModelStoreContainer" CdmEntityContainer="CookMeEntities">
+          <EntitySetMapping Name="Directions"><EntityTypeMapping TypeName="CookMeModel.Direction"><MappingFragment StoreEntitySet="Directions">
+            <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+            <ScalarProperty Name="DirectionId" ColumnName="DirectionId" />
+            <ScalarProperty Name="Instruction" ColumnName="Instruction" />
+            <ScalarProperty Name="Rank" ColumnName="Rank" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Ingredients"><EntityTypeMapping TypeName="CookMeModel.Ingredient"><MappingFragment StoreEntitySet="Ingredient">
+            <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+            <ScalarProperty Name="IngredientId" ColumnName="IngredientId" />
+            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+            <ScalarProperty Name="Measurement" ColumnName="Measurement" />
+            <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
+            <ScalarProperty Name="Preparation" ColumnName="Preparation" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Notes"><EntityTypeMapping TypeName="CookMeModel.Note"><MappingFragment StoreEntitySet="Note">
+            <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+            <ScalarProperty Name="NoteId" ColumnName="NoteId" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Recipes"><EntityTypeMapping TypeName="CookMeModel.Recipe"><MappingFragment StoreEntitySet="Recipe">
+            <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="ShortTitle" ColumnName="ShortTitle" />
+            <ScalarProperty Name="Source" ColumnName="Source" />
+            <ScalarProperty Name="Servings" ColumnName="Servings" />
+            <ScalarProperty Name="PreperationTime" ColumnName="PreperationTime" />
+            <ScalarProperty Name="CookTime" ColumnName="CookTime" />
+            <ScalarProperty Name="Rating" ColumnName="Rating" />
+            <ScalarProperty Name="IsFavorite" ColumnName="IsFavorite" />
+            <ScalarProperty Name="Calories" ColumnName="Calories" />
+            <ScalarProperty Name="TotalFat" ColumnName="TotalFat" />
+            <ScalarProperty Name="SaturatedFat" ColumnName="SaturatedFat" />
+            <ScalarProperty Name="Carbohydrates" ColumnName="Carbohydrates" />
+            <ScalarProperty Name="Fiber" ColumnName="Fiber" />
+            <ScalarProperty Name="Protien" ColumnName="Protien" />
+            <ScalarProperty Name="VitaminC" ColumnName="VitaminC" />
+            <ScalarProperty Name="Calcium" ColumnName="Calcium" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CookMeModel">
+        <EntityTypeShape EntityType="CookMeModel.Direction" Width="1.5" PointX="3" PointY="1.25" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CookMeModel.Ingredient" Width="1.5" PointX="3" PointY="4" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CookMeModel.Note" Width="1.5" PointX="3" PointY="7.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CookMeModel.Recipe" Width="1.5" PointX="0.75" PointY="2.625" Height="5.2494108072916656" IsExpanded="true" />
+        <AssociationConnector Association="CookMeModel.FK_Directions_Recipe" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.9276432291666667" />
+          <ConnectorPoint PointX="3" PointY="2.9276432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="CookMeModel.FK_Ingredient_Recipe" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.1824446614583337" />
+          <ConnectorPoint PointX="3" PointY="5.1824446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="CookMeModel.FK_Note_Note" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.4997054036458328" />
+          <ConnectorPoint PointX="3" PointY="7.4997054036458328" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,117 @@
+﻿<Window xmlns:local="clr-namespace:DemoTransistion" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Background="#FF3FB588" x:Class="DisplayFormDemo" Title="Window1" Height="427" Width="531" mc:Ignorable="d">
+    <Window.Resources>
+        <Storyboard x:Key="OnSelectionChanged1">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="personView" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-90" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="personView" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="personView" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="personView" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-210" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="personView" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-30" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+		<VisualBrush x:Key="topGridVisualBrush" Visual="{Binding ElementName=topGrid}" Stretch="None" TileMode="None"/>
+		
+        <Storyboard x:Key="OnLoaded1" RepeatBehavior="Forever" >
+		    <DoubleAnimationUsingPath BeginTime="00:00:00" Duration="00:00:09.9000000" Storyboard.TargetName="spotlight" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Source="X">
+            	<DoubleAnimationUsingPath.PathGeometry>
+            		<PathGeometry Figures="M84,0.5 C84,9.0604136 48.406638,16 4.5,16 C-39.406638,16 -75,9.0604136 -75,0.5 C-75,-8.0604136 -39.406638,-15 4.5,-15 C48.406638,-15 84,-8.0604136 84,0.5 z"/>
+            	</DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+            <DoubleAnimationUsingPath BeginTime="00:00:00" Duration="00:00:09.9000000" Storyboard.TargetName="spotlight" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Source="Y">
+            	<DoubleAnimationUsingPath.PathGeometry>
+            		<PathGeometry Figures="M84,0.5 C84,9.0604136 48.406638,16 4.5,16 C-39.406638,16 -75,9.0604136 -75,0.5 C-75,-8.0604136 -39.406638,-15 4.5,-15 C48.406638,-15 84,-8.0604136 84,0.5 z"/>
+            	</DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+		</Storyboard>
+		
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Selector.SelectionChanged" SourceName="lbPeople">
+            <BeginStoryboard Storyboard="{StaticResource OnSelectionChanged1}" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+        	<BeginStoryboard x:Name="OnLoaded1_BeginStoryboard" Storyboard="{StaticResource OnLoaded1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Height="390" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="290" />
+            <RowDefinition Height="4" />
+            <RowDefinition Height="290" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="topGrid" ClipToBounds="True" VerticalAlignment="Stretch">
+        	<Grid.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#FF0A0064" Offset="1"/>
+        			<GradientStop Color="#FF3FB588" Offset="0"/>
+        		</LinearGradientBrush>
+        	</Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+          
+            <ListBox FontSize="14" ItemsSource="{x:Static local:Data.People}" Margin="11" x:Name="lbPeople" Background="{x:Null}" FontWeight="Normal" Foreground="#FFFEFF00" />
+            <local:PersonView DataContext="{Binding Path=SelectedItem, ElementName=lbPeople}" x:Name="personView" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Margin="11,11,11,11">
+                <local:PersonView.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                        <SkewTransform AngleX="0" AngleY="0" />
+                        <RotateTransform Angle="0" />
+                        <TranslateTransform X="0" Y="0" />
+                    </TransformGroup>
+                </local:PersonView.RenderTransform>
+            </local:PersonView>
+            <Ellipse x:Name="spotlight" Stroke="{x:Null}" Margin="75,0,102,11" VerticalAlignment="Bottom" Height="53" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
+            	<Ellipse.RenderTransform>
+            		<TransformGroup>
+            			<ScaleTransform ScaleX="1" ScaleY="1"/>
+            			<SkewTransform AngleX="0" AngleY="0"/>
+            			<RotateTransform Angle="0"/>
+            			<TranslateTransform X="0" Y="0"/>
+            		</TransformGroup>
+            	</Ellipse.RenderTransform>
+            	<Ellipse.Fill>
+            		<RadialGradientBrush>
+            			<GradientStop Color="#77FFFFFF" Offset="0"/>
+            			<GradientStop Color="#00FFFFFF" Offset="1"/>
+            		</RadialGradientBrush>
+            	</Ellipse.Fill>
+            </Ellipse>
+        </Grid>
+        <Rectangle Grid.Row="1" Fill="Black" Height="4" />
+	    <Grid Height="Auto" Grid.Row="2" x:Name="grid" VerticalAlignment="Stretch" Background="#FF535353">
+			<Rectangle Height="{Binding ElementName=topGrid, Path=ActualHeight}" Fill="{DynamicResource topGridVisualBrush}" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Opacity="1" >
+				<Rectangle.OpacityMask>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#00000000" Offset="0"/>
+						<GradientStop Color="#E1FFFFFF" Offset="1"/>
+					</LinearGradientBrush>
+				</Rectangle.OpacityMask>
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform ScaleX="1" ScaleY="-1"/>
+						<SkewTransform AngleX="0" AngleY="0"/>
+						<RotateTransform Angle="0"/>
+						<TranslateTransform X="0" Y="0"/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>            
+        </Grid>
+
+    </Grid>
+</Window>

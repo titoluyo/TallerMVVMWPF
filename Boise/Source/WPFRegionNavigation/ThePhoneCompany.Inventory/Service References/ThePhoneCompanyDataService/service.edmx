@@ -1,0 +1,46 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="ThePhoneCompanyModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Category">
+        <Key>
+          <PropertyRef Name="CategoryID" />
+        </Key>
+        <Property Name="CategoryID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="Items" Relationship="ThePhoneCompanyModel.FK_Item_Category" FromRole="Category" ToRole="Item" />
+      </EntityType>
+      <EntityType Name="Item">
+        <Key>
+          <PropertyRef Name="ItemID" />
+        </Key>
+        <Property Name="ItemID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" Precision="19" Scale="4" />
+        <Property Name="CategoryID" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Category" Relationship="ThePhoneCompanyModel.FK_Item_Category" FromRole="Item" ToRole="Category" />
+      </EntityType>
+      <Association Name="FK_Item_Category">
+        <End Role="Category" Type="ThePhoneCompanyModel.Category" Multiplicity="1" />
+        <End Role="Item" Type="ThePhoneCompanyModel.Item" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Category">
+            <PropertyRef Name="CategoryID" />
+          </Principal>
+          <Dependent Role="Item">
+            <PropertyRef Name="CategoryID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+    </Schema>
+    <Schema Namespace="ThePhoneCompany.DataService" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityContainer Name="ThePhoneCompanyEntities" p7:LazyLoadingEnabled="true" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntitySet Name="Categories" EntityType="ThePhoneCompanyModel.Category" />
+        <EntitySet Name="Items" EntityType="ThePhoneCompanyModel.Item" />
+        <AssociationSet Name="FK_Item_Category" Association="ThePhoneCompanyModel.FK_Item_Category">
+          <End Role="Category" EntitySet="Categories" />
+          <End Role="Item" EntitySet="Items" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

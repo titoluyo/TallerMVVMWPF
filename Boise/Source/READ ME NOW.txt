@@ -1,0 +1,39 @@
+=======================================================================================================
+YOU MUST INSTALL THE PRISM LIBRARY NOW.
+
+
+http://compositewpf.codeplex.com/
+
+
+TO INSTALL PRISM, YOU MUST READ THE READ ME HERE: 
+
+http://msdn.microsoft.com/en-us/library/gg405471(PandP.40).aspx
+
+Please read slow, go step by step and in a few minutes you'll be up and running.
+
+STRONGLY SUGGEST YOU PERFORM THIS STEP:
+
+Step 3: Register the Prism Library Binaries with Visual Studio
+
+
+=======================================================================================================
+Some of the topics in Day One used the source code from, "In the Box MVVM Training."
+
+Blog post has link to video (please watch) and an introduction to the material.
+
+You can download here:
+
+http://karlshifflett.wordpress.com/2010/11/07/in-the-box-ndash-mvvm-training/
+
+
+=======================================================================================================
+Some topics in Day One also used the Stuff applicaiton.
+
+Copy the Stuff Data folder to your My Documents folder.  This will seed the Stuff application's data.
+
+=======================================================================================================
+
+
+Modularity blog post:  http://blogs.southworks.net/geoff/2011/06/29/modularity-with-prism/
+
+Unit Testing blog post: http://blogs.southworks.net/geoff/2011/06/29/unit-testing-and-moq/

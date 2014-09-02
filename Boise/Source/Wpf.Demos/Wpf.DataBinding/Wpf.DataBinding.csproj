@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4923AE9-EC70-4E0D-883F-53AC889B035B}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wpf.DataBinding</RootNamespace>
+    <AssemblyName>Wpf.DataBinding</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="01 Introduction\01-SimpleDataBinding.xaml.cs">
+      <DependentUpon>01-SimpleDataBinding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="01 Introduction\02 DataBindingObjects.xaml.cs">
+      <DependentUpon>02 DataBindingObjects.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="01 Introduction\03 DataContent.xaml.cs">
+      <DependentUpon>03 DataContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="01 Introduction\04 DataContextSetInCode.xaml.cs">
+      <DependentUpon>04 DataContextSetInCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="01 Introduction\05 DataContextSetFromAnotherControl.xaml.cs">
+      <DependentUpon>05 DataContextSetFromAnotherControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="01 Introduction\06 DataContextSetFromAnotherControlSourceInCode.xaml.cs">
+      <DependentUpon>06 DataContextSetFromAnotherControlSourceInCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="01 Introduction\07 BindingsSetInCode.xaml.cs">
+      <DependentUpon>07 BindingsSetInCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="02 Fundamentals\01 BindingComponents.xaml.cs">
+      <DependentUpon>01 BindingComponents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="02 Fundamentals\02 RelativeSource.xaml.cs">
+      <DependentUpon>02 RelativeSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="02 Fundamentals\03 BindingToClrProperties.xaml.cs">
+      <DependentUpon>03 BindingToClrProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="02 Fundamentals\04 BindingModes.xaml.cs">
+      <DependentUpon>04 BindingModes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="02 Fundamentals\05 UpdateSourceTrigger.xaml.cs">
+      <DependentUpon>05 UpdateSourceTrigger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="03 VisualizingData\01 ContentControlDemo.xaml.cs">
+      <DependentUpon>01 ContentControlDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="03 VisualizingData\02 ItemsControlDemo.xaml.cs">
+      <DependentUpon>02 ItemsControlDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="03 VisualizingData\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="04 Collections\01 BindingToCollections.xaml.cs">
+      <DependentUpon>01 BindingToCollections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="04 Collections\02 CollectionViews.xaml.cs">
+      <DependentUpon>02 CollectionViews.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="04 Collections\03 Sorting.xaml.cs">
+      <DependentUpon>03 Sorting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="04 Collections\04 Grouping.xaml.cs">
+      <DependentUpon>04 Grouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="04 Collections\05 Converters.xaml.cs">
+      <DependentUpon>05 Converters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="04 Collections\06 DataTemplateSelectorDemo.xaml.cs">
+      <DependentUpon>06 DataTemplateSelectorDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBindingModule.cs" />
+    <Compile Include="Data\PeopleService.cs" />
+    <Compile Include="Infrastructure\IsActiveToBrushConverter.cs" />
+    <Compile Include="Infrastructure\PersonIsActiveDataTemplateSelector.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="01 Introduction\01-SimpleDataBinding.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="01 Introduction\02 DataBindingObjects.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="01 Introduction\03 DataContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="01 Introduction\04 DataContextSetInCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="01 Introduction\05 DataContextSetFromAnotherControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="01 Introduction\06 DataContextSetFromAnotherControlSourceInCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="01 Introduction\07 BindingsSetInCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="02 Fundamentals\01 BindingComponents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="02 Fundamentals\02 RelativeSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="02 Fundamentals\03 BindingToClrProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="02 Fundamentals\04 BindingModes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="02 Fundamentals\05 UpdateSourceTrigger.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="03 VisualizingData\01 ContentControlDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="03 VisualizingData\02 ItemsControlDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="03 VisualizingData\CustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="04 Collections\01 BindingToCollections.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="04 Collections\02 CollectionViews.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="04 Collections\03 Sorting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="04 Collections\04 Grouping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="04 Collections\05 Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="04 Collections\06 DataTemplateSelectorDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bindingcomponents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bindingmodes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bindingobjects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bindingtocollections.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\collectionviews.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\databinding.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\databinding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wpf.Common\Wpf.Common.csproj">
+      <Project>{1074CB8D-EB44-49D4-9DF5-50CDED694AF3}</Project>
+      <Name>Wpf.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.*" "$(SolutionDir)Wpf.Demonstrations\bin\$(ConfigurationName)\" /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

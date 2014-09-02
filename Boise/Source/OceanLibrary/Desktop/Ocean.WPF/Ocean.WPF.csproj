@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CF44B74-FE72-48ED-80E1-1C475C58E590}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ocean.Wpf</RootNamespace>
+    <AssemblyName>Ocean.Wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aero\VistaAeroApi.cs" />
+    <Compile Include="Behaviors\EnterKeyDownBehavior.cs" />
+    <Compile Include="Behaviors\EscapeKeyDownBehavior.cs" />
+    <Compile Include="Behaviors\KeyDownBehavior.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="CommonDialog\TaskDialog.cs" />
+    <Compile Include="CommonDialog\TaskDialogButton.cs" />
+    <Compile Include="CommonDialog\TaskDialogIcon.cs" />
+    <Compile Include="CommonDialog\TaskDialogResult.cs" />
+    <Compile Include="CommonDialog\TaskDialogWindow.xaml.cs">
+      <DependentUpon>TaskDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonDialog\DialogFacade.cs" />
+    <Compile Include="CommonDialog\FolderBrowserDialog.cs" />
+    <Compile Include="CommonDialog\IDialogFacade.cs" />
+    <Compile Include="CommonDialog\LogEventArgs.cs" />
+    <Compile Include="CommonDialog\LogEventHandler.cs" />
+    <Compile Include="CommonDialog\OpenFileDialog.cs" />
+    <Compile Include="CommonDialog\SaveFileDialog.cs" />
+    <Compile Include="Controls\AJAX Style ComboBox\AjaxStyleComboBox.cs" />
+    <Compile Include="Controls\AJAX Style ComboBox\AjaxStyleComboBoxDelegates.cs" />
+    <Compile Include="Controls\AJAX Style ComboBox\LoadItemsSourceRoutedEventArgs.cs" />
+    <Compile Include="Controls\AJAX Style ComboBox\RecordSelectedRoutedEventArgs.cs" />
+    <Compile Include="Controls\CheckListBox\CheckListBox.cs" />
+    <Compile Include="Controls\CheckListBox\CheckListBoxIndicatorItem.cs" />
+    <Compile Include="Controls\CustomToolBarButton\CustomToolBarButton.cs" />
+    <Compile Include="Controls\DataContextSpy.cs" />
+    <Compile Include="Controls\FormNotification\FormNotification.cs" />
+    <Compile Include="Controls\FormNotification\TextBlockAdorner.cs" />
+    <Compile Include="Controls\ListBoxWithSelectedItemIndicator\ListBoxWithSelectedItemIndicator.cs" />
+    <Compile Include="Controls\Rating\Rating.cs" />
+    <Compile Include="Controls\Search Entry TextBox\SearchEntry.cs" />
+    <Compile Include="Controls\Time Display\TimeDisplay.cs" />
+    <Compile Include="Converters\ByteArrayToBitmapImageConverter.cs" />
+    <Compile Include="Converters\FormattingConverter.cs" />
+    <Compile Include="Converters\FormNotificationErrorMessageConverter.cs" />
+    <Compile Include="Converters\ItemsCountToVisibilityConverter.cs" />
+    <Compile Include="Converters\MinDateToVisibilityConverter.cs" />
+    <Compile Include="Converters\NotBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\StringLengthToBooleanConverter.cs" />
+    <Compile Include="Converters\ValdiationErrorGetErrorMessageConverter.cs" />
+    <Compile Include="Effects\GreyscaleEffect.cs" />
+    <Compile Include="Infrastructure\Cloner.cs" />
+    <Compile Include="Infrastructure\FocusBindingAssistant.cs" />
+    <Compile Include="Infrastructure\FrameworkElementExtensions.cs" />
+    <Compile Include="Infrastructure\ProcessStartAssistant.cs" />
+    <Compile Include="Infrastructure\ViewValidationError.cs" />
+    <Compile Include="Infrastructure\VisualTreeSearchAssistant.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModel\OptionViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Effects\ByteCode\Greyscale.ps" />
+    <None Include="Effects\compile.cmd" />
+    <None Include="Effects\Source\Greyscale.fx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CommonDialog\TaskDialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CheckListBox\CheckListBoxResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CustomToolBarButton\CustomToolBarButtonResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\FormNotification\FormNotificationResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ListBoxWithSelectedItemIndicator\ListBoxWithSelectedItemIndicatorResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Rating\RatingResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Search Entry TextBox\SearchEntryResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ocean.Desktop\Ocean.Desktop.csproj">
+      <Project>{E137C88A-CD1F-4927-A500-5F7FAC6CEB1E}</Project>
+      <Name>Ocean.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ocean.VistaBridgeLibrary\Ocean.VistaBridgeLibrary.csproj">
+      <Project>{E38CCFE0-1F65-4437-A199-05F7EFC51565}</Project>
+      <Name>Ocean.VistaBridgeLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CommonDialog\Information.png" />
+    <Resource Include="CommonDialog\Question.png" />
+    <Resource Include="CommonDialog\Shield.png" />
+    <Resource Include="CommonDialog\Stop.png" />
+    <Resource Include="CommonDialog\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\dummyfiller.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BusinessEntityBase_STRING_END_LOADING_NEVER_CALLED_EndLoading_never_called_after_a_BeginLoading_call_was_made___No_operations_are_permitted_until_EndLoading_has_been_called_" xml:space="preserve">
+    <value>EndLoading never called after a BeginLoading call was made.  No operations are permitted until EndLoading has been called.</value>
+  </data>
+  <data name="CharacterCasingCheck_CharacterCasingCheck_The_LookFor_and_ReplaceWith_strings_must_be_the_same_length_" xml:space="preserve">
+    <value>The LookFor and ReplaceWith strings must be the same length.</value>
+  </data>
+  <data name="CharacterCasingCheck_Error_Look_For_and_Replace_With_must_be_the_same_length_" xml:space="preserve">
+    <value>Look For and Replace With must be the same length.</value>
+  </data>
+  <data name="CharacterCasingCheck_Error_Look_For_is_a_required_field_" xml:space="preserve">
+    <value>Look For is a required field.</value>
+  </data>
+  <data name="CharacterCasingCheck_Error_Replace_With_is_a_required_field_" xml:space="preserve">
+    <value>Replace With is a required field.</value>
+  </data>
+  <data name="ClassMessageCreationHelper_ClassToString_Class_has_no_properties" xml:space="preserve">
+    <value>Class has no properties</value>
+  </data>
+  <data name="CompareValueValidatorAttribute_CompareValueValidatorAttribute_This_ConvertToType_has_not_yet_been_programmed__value_passed_was___0_FomatString" xml:space="preserve">
+    <value>This ConvertToType has not yet been programmed, value passed was: {0}</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule_Comparision_type_not_programmed" xml:space="preserve">
+    <value>Comparision type not programmed</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule_Wrong_rule_passed_to_ComparePropertyRule_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to ComparePropertyRule: {0}</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule__0__must_be_equal_to__1__FormatString" xml:space="preserve">
+    <value>{0} must be equal to {1}.</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule__0__must_be_greater_than_or_equal_to__1__FormatString" xml:space="preserve">
+    <value>{0} must be greater than or equal to {1}.</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule__0__must_be_greater_than__1__FormatString" xml:space="preserve">
+    <value>{0} must be greater than {1}.</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule__0__must_be_less_than_or_equal_to__1__FormatString" xml:space="preserve">
+    <value>{0} must be less than or equal to {1}.</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule__0__must_be_less_than__1__FormatString" xml:space="preserve">
+    <value>{0} must be less than {1}.</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule__0__must_not_equal__1__FormatString" xml:space="preserve">
+    <value>{0} must not equal {1}.</value>
+  </data>
+  <data name="ComparisonValidationRules_ComparePropertyRule__0__was_null_or_empty_but_is_a_required_field_FormatString" xml:space="preserve">
+    <value>{0} was null or empty but is a required field.</value>
+  </data>
+  <data name="ComparisonValidationRules_CompareValueRule_Wrong_rule_passed_to_CompareValueRule___0_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to CompareValueRule: {0}</value>
+  </data>
+  <data name="ComparisonValidationRules_InRangeRule_Wrong_rule_passed_to_InRangeRule___0_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to InRangeRule: {0}</value>
+  </data>
+  <data name="ComparisonValidationRules_InRangeRule__0__must_be_greater_than_or_equal_to__1_FormatString" xml:space="preserve">
+    <value>{0} must be greater than or equal to {1}</value>
+  </data>
+  <data name="ComparisonValidationRules_InRangeRule__0__must_be_greater_than__1_FormatString" xml:space="preserve">
+    <value>{0} must be greater than {1}</value>
+  </data>
+  <data name="ComparisonValidationRules_InRangeRule__0__must_be_less_than_or_equal_to__1_FormatString" xml:space="preserve">
+    <value>{0} must be less than or equal to {1}</value>
+  </data>
+  <data name="ComparisonValidationRules_InRangeRule__0__must_be_less_than__1_FormatString" xml:space="preserve">
+    <value>{0} must be less than {1}</value>
+  </data>
+  <data name="ComparisonValidationRules_NotNullRule_Wrong_rule_passed_to_NotNullRule___0_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to NotNullRule: {0}</value>
+  </data>
+  <data name="ComparisonValidationRules_NotNullRule__0__is_DBNull_FormatString" xml:space="preserve">
+    <value>{0} is DBNull.</value>
+  </data>
+  <data name="ComparisonValidationRules_NotNullRule__0__is_null_FormatString" xml:space="preserve">
+    <value>{0} is null.</value>
+  </data>
+  <data name="DataGenerator_GetString_Programmer_did_not_program_this_value_" xml:space="preserve">
+    <value>Programmer did not program this value.</value>
+  </data>
+  <data name="DomainValidationRules_DomainRule_The__0__did_not_match_any_of_the_following_acceptable_values_FormatString" xml:space="preserve">
+    <value>The {0} did not match any of the following acceptable values</value>
+  </data>
+  <data name="DomainValidationRules_DomainRule_Wrong_rule_passed_to_DomainRule___0_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to DomainRule: {0}</value>
+  </data>
+  <data name="EndLoadingNotCalled" xml:space="preserve">
+    <value>EndLoading never called after a BeginLoading call was made.  No operations are permitted until EndLoading has been called.</value>
+  </data>
+  <data name="PropertySupport_ExtractPropertyName_The_expression_is_not_a_member_access_expression_" xml:space="preserve">
+    <value>The expression is not a member access expression.</value>
+  </data>
+  <data name="PropertySupport_ExtractPropertyName_The_member_access_expression_does_not_access_a_property_" xml:space="preserve">
+    <value>The member access expression does not access a property.</value>
+  </data>
+  <data name="PropertySupport_ExtractPropertyName_The_referenced_property_is_a_static_property_" xml:space="preserve">
+    <value>The referenced property is a static property.</value>
+  </data>
+  <data name="RandomPassword_Generate_tryagain" xml:space="preserve">
+    <value>tryagain</value>
+  </data>
+  <data name="RangeValidatorAttribute_RangeValidatorAttribute_This_ConvertToType_has_not_yet_been_programmed__value_passed_was___0_FormatString" xml:space="preserve">
+    <value>This ConvertToType has not yet been programmed, value passed was: {0}</value>
+  </data>
+  <data name="RegularExpressionRuleDescriptor_CustomRegularExpressionPattern_Before_setting_a_custom_pattern__the_Pattern_Type_must_be_custom_" xml:space="preserve">
+    <value>Before setting a custom pattern, the Pattern Type must be custom.</value>
+  </data>
+  <data name="RegularExpressionRuleDescriptor_CustomRegularExpressionPattern_value_is_not_a_valid_regular_expression_" xml:space="preserve">
+    <value>value is not a valid regular expression.</value>
+  </data>
+  <data name="RegularExpressionRuleDescriptor_RegularExpressionRuleDescriptor_This_constructor_does_not_support_assigning_the_RegularExpressionPatternType_to_Custom___Use_other_constructor_" xml:space="preserve">
+    <value>This constructor does not support assigning the RegularExpressionPatternType to Custom.  Use other constructor.</value>
+  </data>
+  <data name="RegularExpressionValidatorAttribute_RegularExpressionValidatorAttribute_Programmer_did_not_supply_a_valid_CustomRegularExpressionPattern" xml:space="preserve">
+    <value>Programmer did not supply a valid CustomRegularExpressionPattern</value>
+  </data>
+  <data name="RuleDescriptorBase_BrokenRuleDescription_Missing_Broken_Rule_Description_For_FormatString" xml:space="preserve">
+    <value>Missing Broken Rule Description For {0}</value>
+  </data>
+  <data name="StateAbbreviationValidator_GetStateName_State_abbreviation___0___is_not_valid_FormatString" xml:space="preserve">
+    <value>State abbreviation: {0}, is not valid</value>
+  </data>
+  <data name="StringLengthRuleDescriptor_StringLengthRuleDescriptor_must_be_greater_than_0_" xml:space="preserve">
+    <value>must be greater than 0.</value>
+  </data>
+  <data name="StringLengthRuleDescriptor_StringLengthRuleDescriptor_must_be_greater_than_or_equal_to_the_MinimumLength_" xml:space="preserve">
+    <value>must be greater than or equal to the MinimumLength.</value>
+  </data>
+  <data name="StringLengthValidatorAttribute_StringLengthValidatorAttribute_must_be_greater_than_0_" xml:space="preserve">
+    <value>must be greater than 0.</value>
+  </data>
+  <data name="StringLengthValidatorAttribute_StringLengthValidatorAttribute_must_be_greater_than_or_equal_to_the_MinimumLength_" xml:space="preserve">
+    <value>must be greater than or equal to the MinimumLength.</value>
+  </data>
+  <data name="StringValidationRules_BankRoutingNumberRule_Bank_routing_number_validation_rule_can_only_be_applied_to_String_properties_" xml:space="preserve">
+    <value>Bank routing number validation rule can only be applied to String properties.</value>
+  </data>
+  <data name="StringValidationRules_BankRoutingNumberRule_The_entered_value__0__is_not_a_valid_bank_routing_number_FormatString" xml:space="preserve">
+    <value>The entered value {0} is not a valid bank routing number.</value>
+  </data>
+  <data name="StringValidationRules_BankRoutingNumberRule_The_entered_value__0__is_not_a_valid_bank_routing_number___All_bank_routing_numbers_are_9_digits_in_length_FormatString" xml:space="preserve">
+    <value>The entered value {0} is not a valid bank routing number.  All bank routing numbers are 9 digits in length.</value>
+  </data>
+  <data name="StringValidationRules_BankRoutingNumberRule_The_entered_value__0__is_not_a_valid_bank_routing_number___Only_numeric_input_is_allowed_FormatString" xml:space="preserve">
+    <value>The entered value {0} is not a valid bank routing number.  Only numeric input is allowed.</value>
+  </data>
+  <data name="StringValidationRules_BankRoutingNumberRule_The_entered_value__0__is_not_a_valid_bank_routing_number___The_first_digit_must_be_a_0_or_a_1_FormatString" xml:space="preserve">
+    <value>The entered value {0} is not a valid bank routing number.  The first digit must be a 0 or a 1.</value>
+  </data>
+  <data name="StringValidationRules_BankRoutingNumberRule_Wrong_rule_passed_to_BankRoutingNumberRule_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to BankRoutingNumberRule: {0}</value>
+  </data>
+  <data name="StringValidationRules_BankRoutingNumberRule__0__was_null_or_empty_but_is_a_required_field_" xml:space="preserve">
+    <value>{0} was null or empty but is a required field.</value>
+  </data>
+  <data name="StringValidationRules_CreditCardNumberRule_Credit_card_number_validation_rule_can_only_be_applied_to_String_properties_" xml:space="preserve">
+    <value>Credit card number validation rule can only be applied to String properties.</value>
+  </data>
+  <data name="StringValidationRules_CreditCardNumberRule_The_entered_value__0__is_not_a_valid_credit_card_number_FormatString" xml:space="preserve">
+    <value>The entered value {0} is not a valid credit card number.</value>
+  </data>
+  <data name="StringValidationRules_CreditCardNumberRule_The_entered_value__0__is_not_a_valid_credit_card_number___Only_numeric_input_is_allowed_FormatString" xml:space="preserve">
+    <value>The entered value {0} is not a valid credit card number.  Only numeric input is allowed.</value>
+  </data>
+  <data name="StringValidationRules_CreditCardNumberRule_Wrong_rule_passed_to_CreditCardNumberRule___0_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to CreditCardNumberRule: {0}</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule_CustomRegularExpressionPattern_not_supplied" xml:space="preserve">
+    <value>CustomRegularExpressionPattern not supplied</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule_Programmer_did_not_program_this_RegularExpressionPatternType" xml:space="preserve">
+    <value>Programmer did not program this RegularExpressionPatternType</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule_Wrong_rule_passed_to_RegularExpressionRule___0_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to RegularExpressionRule: {0}</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule__0__did_not_match_the_required_email_pattern_FormatString" xml:space="preserve">
+    <value>{0} did not match the required email pattern.</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule__0__did_not_match_the_required_IP_Address_pattern_FormatString" xml:space="preserve">
+    <value>{0} did not match the required IP Address pattern.</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule__0__did_not_match_the_required_SSN_pattern_FormatString" xml:space="preserve">
+    <value>{0} did not match the required SSN pattern.</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule__0__did_not_match_the_required_URL_pattern_FormatString" xml:space="preserve">
+    <value>{0} did not match the required URL pattern.</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule__0__did_not_match_the_required_Zip_Code_pattern_FormatString" xml:space="preserve">
+    <value>{0} did not match the required Zip Code pattern.</value>
+  </data>
+  <data name="StringValidationRules_RegularExpressionRule__0__did_not_match_the_required__1__pattern_FormatString" xml:space="preserve">
+    <value>{0} did not match the required {1} pattern.</value>
+  </data>
+  <data name="StringValidationRules_StateAbbreviationRule_State_abbreviation_validation_rule_can_only_be_applied_to_String_properties_FormatString" xml:space="preserve">
+    <value>State abbreviation validation rule can only be applied to String properties.</value>
+  </data>
+  <data name="StringValidationRules_StateAbbreviationRule_The_entered_value__0__is_not_a_valid_state_abbreviation_FormatString" xml:space="preserve">
+    <value>The entered value {0} is not a valid state abbreviation.</value>
+  </data>
+  <data name="StringValidationRules_StateAbbreviationRule_Wrong_rule_passed_to_StateAbbreviationRule___0_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to StateAbbreviationRule: {0}</value>
+  </data>
+  <data name="StringValidationRules_StringLengthRule_Wrong_rule_passed_to_StringLengthRule___0_FormatString" xml:space="preserve">
+    <value>Wrong rule passed to StringLengthRule: {0}</value>
+  </data>
+  <data name="StringValidationRules_StringLengthRule__0__can_not_be_greater_than__1__character_s__long_FormatString" xml:space="preserve">
+    <value>{0} can not be greater than {1} character(s) long.</value>
+  </data>
+  <data name="StringValidationRules_StringLengthRule__0__can_not_be_less_than__1__character_s__long_FormatString" xml:space="preserve">
+    <value>{0} can not be less than {1} character(s) long.</value>
+  </data>
+  <data name="StringValidationRules_StringLengthRule__0__can_not_be_null_FormatString" xml:space="preserve">
+    <value>{0} can not be null.</value>
+  </data>
+  <data name="Validator_Validator_RuleType_not_programmed_yet" xml:space="preserve">
+    <value>RuleType not programmed yet</value>
+  </data>
+	<data name="DataAccess_ExecuteNonQuery_The_sqlconnection_state_was__0____The_method_only_permits_the_sqlconnection_state_to_be_either_open_or_closed_only_FormatString">
+		<value xml:space="preserve">The sqlconnection state was {0}.  The method only permits the sqlconnection state to be either open or closed only.</value>
+	</data>
+	<data name="DataAccess_ExecuteNonQuery_The_method_did_not_receive_any_command_text___Calling_code_must_supply_the_command_text_">
+		<value xml:space="preserve">The method did not receive any command text.  Calling code must supply the command text.</value>
+	</data>
+</root>

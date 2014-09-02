@@ -1,0 +1,25 @@
+﻿<Window 
+    x:Class="CollectionFiltering"
+    xmlns:local="clr-namespace:DemoTransistion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Collection Filtering" Height="292" Width="495">
+    <Window.Resources>
+        <CollectionViewSource Source="{x:Static local:Data.BothSexes }" x:Key="cvsMen" Filter="FilterMen_Filter" />
+        <CollectionViewSource Source="{x:Static local:Data.BothSexes }" x:Key="cvsWomen" Filter="FilterWomen_Filter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56*" />
+            <RowDefinition Height="198*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsSource="{Binding Source={StaticResource cvsMen}}" Margin="11" Name="ListBox1" Grid.RowSpan="2" Grid.Row="1" />
+        <ListBox ItemsSource="{Binding Source={StaticResource cvsWomen}}" Grid.Column="1" Margin="11" Name="ListBox2" Grid.RowSpan="2" Grid.Row="1" />
+        <TextBlock Margin="11" Name="TextBlock1" Text="Men" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Column="1" Margin="11" Name="TextBlock2" Text="Woman" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Window>

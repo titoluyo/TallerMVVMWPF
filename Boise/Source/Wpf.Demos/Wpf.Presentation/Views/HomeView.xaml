@@ -1,0 +1,92 @@
+﻿<UserControl 
+    x:Class="Wpf.Presentation.Views.HomeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="700" d:DesignWidth="1100">
+	<UserControl.Resources>
+		<Storyboard RepeatBehavior="Forever" x:Key="FillDataFormStoryboard" Duration="0:0:4" >
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="268"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="-17"/>
+			</DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.1" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tbCompany">
+            	<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.01"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tbTeam">
+            	<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="0.01"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource FillDataFormStoryboard}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+    <Grid>
+        <Border Padding="11" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{DynamicResource background}" CornerRadius="11" BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="200" />
+                </Grid.RowDefinitions>
+
+                <Image Margin="11" HorizontalAlignment="Left" Height="96" Source="/Wpf.Presentation;component/Resources/database.png" Stretch="Fill" VerticalAlignment="Center" Width="96"/>
+
+                <Grid Grid.Column="1" Margin="150,11,11,11">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Company" Margin="6" Foreground="White" FontSize="14" />
+                    <TextBox Grid.Column="1" Width="150" Margin="6" HorizontalAlignment="Left" Text="" />
+                    <TextBlock x:Name="tbCompany" Grid.Column="1" Text="Microsoft" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="9,0,0,0" Opacity="0" />
+
+                    <TextBlock Grid.Row="1" Text="Team" Margin="6" Foreground="White" FontSize="14"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Width="150" Margin="6" HorizontalAlignment="Left" Text=""/>
+                    <TextBlock x:Name="tbTeam" Grid.Row="1" Grid.Column="1" Text="patterns &amp; practices" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="9,0,0,0" Opacity="0" />
+
+                </Grid>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="11">
+                    <TextBlock Text="Boise WPF Demonstrations" Foreground="{DynamicResource headerText}" FontFamily="Arial" FontSize="36" FontWeight="Bold" />
+                    <TextBlock Text="powered by patterns &amp; practices Prism" Foreground="{DynamicResource headerText}" FontFamily="Arial" FontStyle="Italic" FontSize="24" TextAlignment="Right" Margin="0,16,0,0" />
+                </StackPanel>
+
+                <Image x:Name="image" HorizontalAlignment="Left" Height="48" Margin="32.003,38,0,0" Source="/Wpf.Presentation;component/Resources/list.png" Stretch="Fill" VerticalAlignment="Top" Width="48" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+                	<Image.RenderTransform>
+                		<TransformGroup>
+                			<ScaleTransform/>
+                			<SkewTransform/>
+                			<RotateTransform/>
+                			<TranslateTransform/>
+                		</TransformGroup>
+                	</Image.RenderTransform>
+                </Image>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

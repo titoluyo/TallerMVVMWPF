@@ -1,0 +1,27 @@
+﻿<UserControl 
+    x:Class="Wpf.DataBinding.Introduction.SimpleDataBinding"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="186" d:DesignWidth="703">
+  <Grid>
+    <Grid>
+      <TextBlock 
+                Text="{Binding ElementName=Slider1, Path=Value, StringFormat=\{0:N\}}" 
+                Margin="163,30,0,0" Height="32" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" FontSize="18" />
+
+      <Slider Height="22" HorizontalAlignment="Left" Margin="20,30,0,0" 
+                Name="Slider1" VerticalAlignment="Top" Width="100" Value="0" />
+
+      <TextBlock 
+                Margin="20,81,0,0" TextWrapping="Wrap" 
+                Text="Dependency property to dependency property data binding." 
+                HorizontalAlignment="Left" Width="643" FontSize="18" Height="63" 
+                VerticalAlignment="Top" FontWeight="Bold" />
+
+    </Grid>
+  </Grid>
+</UserControl>

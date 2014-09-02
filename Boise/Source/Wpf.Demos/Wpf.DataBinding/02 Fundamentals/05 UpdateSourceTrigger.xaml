@@ -1,0 +1,25 @@
+﻿<UserControl 
+    x:Class="Wpf.DataBinding.Fundamentals.UpdateSourceTrigger"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="269" d:DesignWidth="431">
+    <Grid>
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="4,21,0,0" VerticalAlignment="Top" Width="83" Text="First Name" />
+        <TextBox Text="{Binding Path=FirstName}" Height="23" Margin="89,18,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="177" />
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="4,51,0,0" Text="Last Name" VerticalAlignment="Top" Width="83" />
+        <TextBox Height="23" Margin="89,48,0,0" Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="177" />
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="282,21,0,0" Text="Default - LostFocus" VerticalAlignment="Top" Width="167" />
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="282,48,0,0" Text="PropertyChanged" VerticalAlignment="Top" Width="167" />
+        <GroupBox Header="Read-Only Values" Margin="89,111,0,0" Name="GroupBox1" Width="300" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock HorizontalAlignment="Left" Margin="6,13,0,0" Text="First Name" Width="83" Height="21" VerticalAlignment="Top" />
+                <TextBlock Height="21" HorizontalAlignment="Left" Margin="6,40.04,0,0" Text="Last Name" VerticalAlignment="Top" Width="83" />
+                <TextBlock Height="21" Margin="95,13,0,0" Text="{Binding Path=FirstName}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="178" />
+                <TextBlock Margin="95,40,0,0" Text="{Binding Path=LastName}"  Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="178" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,296 @@
+﻿<UserControl 
+    xmlns:stuffCustomEffects="clr-namespace:Stuff.CustomEffects"
+    xmlns:simpleWPFInfrastructure="clr-namespace:Simple.WPF.Infrastructure;assembly=Simple.WPF"
+    xmlns:simpleControls="clr-namespace:Simple.WPF.Controls;assembly=Simple.WPF"
+    xmlns:viewModel="clr-namespace:Stuff.ViewModel"
+    xmlns:converters="clr-namespace:Stuff.Converters"
+    x:Class="Stuff.View.BrowseStuffView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" d:DesignHeight="697" d:DesignWidth="952">
+    <UserControl.Resources>
+        <converters:ByteArrayToBitmapImageConverter x:Key="byteArrayToBitmapImageConverter" />
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <viewModel:BrowseStuffViewModel />
+    </UserControl.DataContext>
+    <Grid x:Name="layoutRoot">
+        <Grid.Resources>
+
+            <DataTemplate x:Key="outlookCardDataTemplate">
+                <Control>
+                    <Control.Template>
+                        <ControlTemplate>
+                            <Border Padding="7" Height="180" Width="350" Background="#FFE1E0E0" CornerRadius="10" BorderThickness="1" x:Name="bd" Margin="4" Focusable="False" Style="{DynamicResource searchResultItemStyle}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Image Margin="0,2,7,0" Height="90" Width="65" Source="{Binding Path=Image, Converter={StaticResource byteArrayToBitmapImageConverter}}" />
+                                    <TextBlock Margin="0,7,0,0" Text="{Binding Path=Description}" Grid.ColumnSpan="2" Grid.Row="1" TextWrapping="Wrap" TextTrimming="WordEllipsis" />
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Margin="0,2" ToolTip="{Binding Path=Name}" Text="{Binding Path=Name}" FontSize="12" FontWeight="Bold" TextWrapping="NoWrap" TextTrimming="WordEllipsis" Grid.ColumnSpan="2" />
+
+                                        <TextBlock Margin="0,2" Text="{Binding Path=Cast}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+
+                                        <TextBlock Margin="0,2" Text="Released: " FontWeight="Bold" Grid.Row="2" />
+                                        <TextBlock Margin="0,2" Text="{Binding Path=YearReleased}" TextWrapping="NoWrap" Grid.Row="2" Grid.Column="1" />
+
+                                        <TextBlock Margin="0,2" Text="Public Rating: " FontWeight="Bold" Grid.Row="3" />
+                                        <simpleControls:Rating ValueSelectorBackground="{Binding ElementName=bd, Path=Background}" IsReadOnly="True" Value="{Binding Path=PublicRating}" Height="16" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Left" Margin="0,2" ValueBrush="#FF2E2E2E" />
+
+                                        <TextBlock Margin="0,2" Text="My Rating: " FontWeight="Bold" Grid.Row="4" />
+                                        <simpleControls:Rating ValueSelectorBackground="{Binding ElementName=bd, Path=Background}" IsReadOnly="True" Value="{Binding Path=MyRating}" Height="16" Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Left" Margin="0,2" ValueBrush="#FF2E2E2E" />
+
+                                    </Grid>
+
+                                    <Button Grid.Column="1" Grid.Row="1" x:Name="btnEdit" Visibility="Collapsed" VerticalAlignment="Bottom" HorizontalAlignment="Right"  ToolTip="Click to edit this movie" Margin="3" CommandParameter="{Binding}" Command="{Binding Path=DataContext.ShowEditStuffViewCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Border Padding="3" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                    <Image Source="/Stuff;component/Images/edit.png" Height="16" Width="16">
+                                                        <Image.Effect>
+                                                            <stuffCustomEffects:GreyscaleEffect />
+                                                        </Image.Effect>
+                                                    </Image>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#FFA9A9A9" />
+                                    <Setter TargetName="bd" Property="BorderBrush" Value="Black" />
+                                    <Setter TargetName="btnEdit" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Control.Template>
+                </Control>
+            </DataTemplate>
+
+            <DataTemplate x:Key="movieCoverImageDataTemplate">
+                <Control>
+                    <Control.Template>
+                        <ControlTemplate>
+                            <Border Padding="3" Background="#FFE1E0E0" CornerRadius="6" BorderThickness="1" x:Name="bd" Margin="7" Focusable="True" Style="{DynamicResource searchResultItemStyle}">
+                                <Grid>
+                                    <Image IsHitTestVisible="True" Height="150" Width="110" Source="{Binding Path=Image, Converter={StaticResource byteArrayToBitmapImageConverter}}" />
+                                    <Button x:Name="btnEdit" Visibility="Collapsed" VerticalAlignment="Bottom" HorizontalAlignment="Right"  ToolTip="Click to edit this movie" Margin="3" CommandParameter="{Binding}" Command="{Binding Path=DataContext.ShowEditStuffViewCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Border Padding="3" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                    <Image Source="/Stuff;component/Images/edit.png" Height="16" Width="16">
+                                                        <Image.Effect>
+                                                            <stuffCustomEffects:GreyscaleEffect />
+                                                        </Image.Effect>
+                                                    </Image>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#FFA9A9A9" />
+                                    <Setter TargetName="bd" Property="BorderBrush" Value="Black" />
+                                    <Setter TargetName="btnEdit" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Control.Template>
+                </Control>
+            </DataTemplate>
+
+            <SolidColorBrush x:Key="ButtonPushedBackground" Color="#FFB7B7B7"/>
+            <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+                <GradientStop Color="#F3F3F3" Offset="0"/>
+                <GradientStop Color="#EBEBEB" Offset="0.5"/>
+                <GradientStop Color="#DDDDDD" Offset="0.5"/>
+                <GradientStop Color="#CDCDCD" Offset="1"/>
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+            <Style x:Key="BrowseViewSelectionRadioButtonStyle" TargetType="{x:Type RadioButton}">
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RadioButton}">
+                            <Border Margin="0" x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                                <Grid>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="true">
+                                    <Setter Property="Background" TargetName="bd" Value="{DynamicResource ButtonPushedBackground}"/>
+                                    <Setter Property="BorderThickness" TargetName="bd" Value="2,2,1,1"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="false">
+                                    <Setter Property="Margin" TargetName="bd" Value="1,1,0,0"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+        </Grid.Resources>
+
+        <Border Style="{DynamicResource databaseViewOuterBorder}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <simpleControls:SearchEntry x:Name="searchEntry" ToolTip="Enter search text.  Access key for this field is: ALT + S" AccessKeyText="_S" FilterText="{Binding Path=FilterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FilterTextBoxWaterMarkText="Enter search text here" />
+
+                <ListBox Grid.Row="2" KeyboardNavigation.TabNavigation="Cycle" Background="{x:Null}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="{x:Null}" x:Name="itemsBrowser" ItemTemplate="{StaticResource movieCoverImageDataTemplate}" Margin="7,0,0,0" ItemsSource="{Binding Path=SearchResults}" FocusVisualStyle="{x:Null}" IsTabStop="False" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}">
+                    <ListBox.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="DarkGray" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+                        <Style x:Key="ListBoxItemStyle1" TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                            <Setter Property="Padding" Value="2,0,0,0"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <Border Margin="6" CornerRadius="6" x:Name="Bd" BorderBrush="{x:Null}" BorderThickness="0" Background="{TemplateBinding Background}" Padding="0" SnapsToDevicePixels="true">
+                                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="true">
+                                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsSelected" Value="true"/>
+                                                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                            </MultiTrigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.Resources>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+
+                <Border CornerRadius="7,0,7,7" BorderBrush="Black" BorderThickness="1" x:Name="movieCoverDetailsForm" Grid.Row="3" DataContext="{Binding ElementName=itemsBrowser, Path=SelectedItem}" Padding="7" Background="LightGray">
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Margin" Value="2" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.ColumnSpan="2" Text="{Binding Path=Name}" FontSize="14" FontWeight="Bold" TextTrimming="WordEllipsis" />
+                        <TextBlock Grid.ColumnSpan="2" Text="{Binding Path=Cast}" TextTrimming="WordEllipsis" Grid.Row="1" />
+                        <TextBlock Text="Public Rating:" Grid.Row="2" FontWeight="Bold" />
+                        <TextBlock Text="My Rating:" Grid.Row="3" FontWeight="Bold" />
+
+                        <simpleControls:Rating IsReadOnly="True" Value="{Binding Path=PublicRating}" Height="16" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" Margin="3.5" ValueBrush="#FF2E2E2E" />
+                        <simpleControls:Rating IsReadOnly="True" Value="{Binding Path=MyRating}" Height="16" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Left" Margin="3.5" ValueBrush="#FF2E2E2E" />
+
+                        <TextBlock Grid.ColumnSpan="2" Text="{Binding Path=Description}" TextTrimming="WordEllipsis" Grid.Row="4" TextWrapping="Wrap" Margin="3.5,7,3.5,3.5" />
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+        <Border Background="{DynamicResource formAndButtonBarsBrush}" Margin="20,2" Padding="5,1,5,1" BorderBrush="Black" BorderThickness="1" CornerRadius="7,0,7,7" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <DockPanel>
+
+                <Button ToolTip="Click to add a new movie to your collection" Margin="11,0" Height="16" DockPanel.Dock="Right" Command="{Binding Path=ShowAddStuffViewCommand}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="/Stuff;component/Images/add.png" Height="16" Width="16">
+                                <Image.Effect>
+                                    <stuffCustomEffects:GreyscaleEffect />
+                                </Image.Effect>
+                            </Image>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <RadioButton Checked="OutlookCardViewRadioButton_Checked" VerticalAlignment="Center" Style="{StaticResource BrowseViewSelectionRadioButtonStyle}" ToolTip="Click to browse using the Outlook style card" DockPanel.Dock="Right" >
+                    <Image Source="/Stuff;component/Images/cardview.png" Height="16" Width="16">
+                        <Image.Effect>
+                            <stuffCustomEffects:GreyscaleEffect />
+                        </Image.Effect>
+                    </Image>
+                </RadioButton>
+
+                <RadioButton IsChecked="True" Checked="MovieCoverViewRadioButton_Checked" VerticalAlignment="Center" Style="{StaticResource BrowseViewSelectionRadioButtonStyle}" ToolTip="Click to browse using the movie cover card" DockPanel.Dock="Right" >
+                    <Image Source="/Stuff;component/Images/movieimageview.png" Height="16" Width="16">
+                        <Image.Effect>
+                            <stuffCustomEffects:GreyscaleEffect />
+                        </Image.Effect>
+                    </Image>
+                </RadioButton>
+
+                <TextBlock DockPanel.Dock="Left" Margin="7" FontWeight="Bold" Foreground="White" Text="Browsing Movies" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            </DockPanel>
+
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+These definitions were taken from the VistaBridge sample (CrossTechnologySamples.zip) in the Windows SDK.

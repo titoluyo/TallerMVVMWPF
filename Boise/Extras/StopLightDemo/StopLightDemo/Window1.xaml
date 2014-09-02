@@ -1,0 +1,143 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sl="clr-namespace:StopLightCustomControl;assembly=StopLightCustomControl"  
+    xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    x:Class="Window1"
+    Title="Reliable LIght Company Street Light Demo" Height="600" Width="800"
+    >
+	<Window.Resources>
+		<Storyboard x:Key="LightDemoTimeline" RepeatBehavior="Forever">
+			<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="WestLight" Storyboard.TargetProperty="(sl:StopLight.Light)">
+				<DiscreteObjectKeyFrame KeyTime="00:00:02" Value="{x:Static sl:Lights.Yellow}"/>
+				<DiscreteObjectKeyFrame KeyTime="00:00:03" Value="{x:Static sl:Lights.Red}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="EastLight" Storyboard.TargetProperty="(sl:StopLight.Light)">
+				<DiscreteObjectKeyFrame KeyTime="00:00:02" Value="{x:Static sl:Lights.Yellow}"/>
+				<DiscreteObjectKeyFrame KeyTime="00:00:03" Value="{x:Static sl:Lights.Red}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SouthLight" Storyboard.TargetProperty="(sl:StopLight.Light)">
+				<DiscreteObjectKeyFrame KeyTime="00:00:04" Value="{x:Static sl:Lights.Green}"/>
+				<DiscreteObjectKeyFrame KeyTime="00:00:06" Value="{x:Static sl:Lights.Yellow}"/>
+				<DiscreteObjectKeyFrame KeyTime="00:00:07" Value="{x:Static sl:Lights.Red}"/>
+				<DiscreteObjectKeyFrame KeyTime="00:00:08" Value="{x:Static sl:Lights.Red}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NorthLight" Storyboard.TargetProperty="(sl:StopLight.Light)">
+				<DiscreteObjectKeyFrame KeyTime="00:00:04" Value="{x:Static sl:Lights.Green}"/>
+				<DiscreteObjectKeyFrame KeyTime="00:00:06" Value="{x:Static sl:Lights.Yellow}"/>
+				<DiscreteObjectKeyFrame KeyTime="00:00:07" Value="{x:Static sl:Lights.Red}"/>
+				<DiscreteObjectKeyFrame KeyTime="00:00:08" Value="{x:Static sl:Lights.Red}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+        
+		<Style x:Key="hardwareStopLightStyle" TargetType="{x:Type sl:StopLight}">
+			<Style.Resources>
+				<SolidColorBrush x:Key="GreenOnBrush" Color="#FF07FF00"/>
+				<SolidColorBrush x:Key="RedOffBrush" Color="#FF6B0909"/>
+				<LinearGradientBrush x:Key="LightStrokeBrush" EndPoint="0.5,0" StartPoint="0.5,1">
+					<GradientStop Color="#FF000000" Offset="0"/>
+					<GradientStop Color="#FF656565" Offset="1"/>
+				</LinearGradientBrush>
+				<SolidColorBrush x:Key="RedOnBrush" Color="#FFFF1818"/>
+				<SolidColorBrush x:Key="YellowOffBrush" Color="#FF7A6813"/>
+				<SolidColorBrush x:Key="GreenOffBrush" Color="#FF1D6B0B"/>
+				<SolidColorBrush x:Key="YellowOnBrush" Color="#FFFCFF00"/>
+			</Style.Resources>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type sl:StopLight}">
+						<Border HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF505050" BorderBrush="#FF9E9E9E" BorderThickness="4,4,4,4" CornerRadius="10,10,10,10" Padding="0,0,0,0">
+							<Border Margin="0,0,0,0" Width="Auto" Height="Auto" BorderBrush="#FF414141" BorderThickness="2,2,2,2" CornerRadius="10,10,10,10" Padding="8,8,8,8">
+								<StackPanel>
+									<Ellipse Fill="{StaticResource RedOffBrush}" Stroke="{StaticResource LightStrokeBrush}" Margin="0,5,0,5" x:Name="RedLight" Width="40" Height="40"/>
+									<Ellipse Fill="{StaticResource YellowOffBrush}" Stroke="{StaticResource LightStrokeBrush}" Margin="0,5,0,5" x:Name="YellowLight" Width="40" Height="40"/>
+									<Ellipse Fill="{StaticResource GreenOffBrush}" Stroke="{StaticResource LightStrokeBrush}" Margin="0,5,0,5" x:Name="GreenLight" Width="40" Height="40"/>
+								</StackPanel>
+							</Border>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="Light" Value="Red">
+								<Setter Property="Fill" TargetName="RedLight" Value="{StaticResource RedOnBrush}"/>
+							</Trigger>
+							<Trigger Property="Light" Value="Yellow">
+								<Setter Property="Fill" TargetName="YellowLight" Value="{StaticResource YellowOnBrush}"/>
+							</Trigger>
+							<Trigger Property="Light" Value="Green">
+								<Setter Property="Fill" TargetName="GreenLight" Value="{StaticResource GreenOnBrush}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnBeginDemo">
+			<BeginStoryboard Storyboard="{StaticResource LightDemoTimeline}" x:Name="LightDemoTimeline_BeginStoryboard"/>
+		</EventTrigger>
+	</Window.Triggers>
+	<Canvas>
+		<Rectangle Fill="#FFBABABA" Stroke="#FF000000" StrokeThickness="0" Width="221" Height="564" Canvas.Left="282"/>
+		<Rectangle Fill="#FFBABABA" Stroke="#FF000000" Width="784" Height="221" StrokeThickness="0" Canvas.Top="173"/>
+		<Path Fill="#FFFFF800" Stretch="Fill" Stroke="#FFFFF800" StrokeThickness="2" Width="4" Height="564" Data="M391,-9 L395,628" Canvas.Left="394"/>
+		<Path Fill="#FFFFF800" Stretch="Fill" Stroke="#FFFFF800" StrokeThickness="2" Width="4" Height="564" Canvas.Left="389" Data="M391,-9 L395,628"/>
+		<Path Fill="#FFFFF800" Stretch="Fill" Stroke="#FFFFF800" StrokeThickness="2" Width="4" Height="788.488" Data="M391,-9 L395,628" RenderTransformOrigin="0.5,0.5" Canvas.Left="391.237" Canvas.Top="-110.768">
+			<Path.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="1" ScaleY="1"/>
+					<SkewTransform AngleX="0" AngleY="0"/>
+					<RotateTransform Angle="-90.295"/>
+					<TranslateTransform X="0" Y="0"/>
+				</TransformGroup>
+			</Path.RenderTransform>
+		</Path>
+		<Path Fill="#FFFFF800" Stretch="Fill" Stroke="#FFFFF800" StrokeThickness="2" Width="4" Height="788.579" Data="M391,-9 L395,628" RenderTransformOrigin="0.5,0.5" Canvas.Left="391.192" Canvas.Top="-106.813">
+			<Path.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="1" ScaleY="1"/>
+					<SkewTransform AngleX="0" AngleY="0"/>
+					<RotateTransform Angle="-90.295"/>
+					<TranslateTransform X="0" Y="0"/>
+				</TransformGroup>
+			</Path.RenderTransform>
+		</Path>
+        
+		<Rectangle Fill="#FFBABABA" Stroke="{x:Null}" StrokeThickness="2" Width="221" Height="221" Canvas.Left="282" Canvas.Top="173"/>
+		<sl:StopLight x:Name="SouthLight" Light="Red" RenderTransformOrigin="0.5,0.5" Width="Auto" Canvas.Left="399" Canvas.Top="397" FontSize="36" >
+			<sl:StopLight.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+				</TransformGroup>
+			</sl:StopLight.RenderTransform>
+		</sl:StopLight>
+ 
+		<sl:StopLight x:Name="NorthLight" Light="Red" RenderTransformOrigin="0.5,0.5" Width="Auto" Canvas.Left="300" Canvas.Top="4" FontSize="36" >
+			<sl:StopLight.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+				</TransformGroup>
+			</sl:StopLight.RenderTransform>
+		</sl:StopLight>
+ 
+		<sl:StopLight x:Name="WestLight" Light="Green" RenderTransformOrigin="0.5,0.5" Width="Auto" Canvas.Left="174" Canvas.Top="232" FontSize="36" >
+			<sl:StopLight.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+				</TransformGroup>
+			</sl:StopLight.RenderTransform>
+		</sl:StopLight>
+ 
+		<sl:StopLight x:Name="EastLight" Light="Green" RenderTransformOrigin="0.5,0.5" Width="Auto" Canvas.Left="499" Canvas.Top="164" FontSize="36" >
+			<sl:StopLight.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+				</TransformGroup>
+			</sl:StopLight.RenderTransform>
+		</sl:StopLight>
+ 
+		<TextBlock Width="278" Height="36" FontSize="24" FontWeight="Bold" Text="Reliable Light Company" TextAlignment="Center" TextWrapping="Wrap" Canvas.Left="506" Canvas.Top="423"/>
+		<Button x:Name="btnBeginDemo" Width="166.067" Content="Begin Sales Demo" FontSize="16" Canvas.Left="578" Canvas.Top="515"/>
+        <CheckBox x:Name="chkUseHardwareLightFixtures" Width="166.067" Height="18" Content="Use Hardware Light Fixtures" Canvas.Left="578" Canvas.Top="475" /> 
+	</Canvas>
+</Window>

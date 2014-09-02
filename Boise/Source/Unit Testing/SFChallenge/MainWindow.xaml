@@ -1,0 +1,10 @@
+﻿<Window x:Class="SFChallenge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:SFChallenge_Controls="clr-namespace:SFChallenge.Controls;assembly=SFChallenge.Controls"
+        Title="Challenge of the Super Friends" Height="600" Width="1024" Background="Black"
+        >
+    <Grid>
+        <SFChallenge_Controls:MainViewControl/>
+    </Grid>
+</Window>

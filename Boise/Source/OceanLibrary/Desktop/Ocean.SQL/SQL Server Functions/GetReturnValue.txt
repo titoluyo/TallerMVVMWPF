@@ -1,0 +1,35 @@
+﻿CREATE FUNCTION [dbo].[GetReturnValue]
+    (
+    @NAME varchar(25)
+    )
+RETURNS int
+AS
+BEGIN
+/*
+    dbo.GetReturnValue return values
+    1 = success             -  dbo.GetReturnValue('success')
+    -1 = record not found   -  dbo.GetReturnValue('recordnotfound')
+    -2 = timestamp mismatch -  dbo.GetReturnValue('timestampmismatch')
+    -3 = failed             -  dbo.GetReturnValue('failed')
+    -4 = recordalreadyindatabase - dbo.GetReturnValue('recordalreadyindatabase')
+    -100 = unable to translate the name lookup
+    Values above 100 are reserved for client side trapped conditions and should never
+    be used in a stored procedure.
+*/
+DECLARE @RETURN int
+DECLARE @KEY varchar(25)
+SET @KEY = LOWER(@NAME)
+IF @KEY = 'success'
+    SET @RETURN = 1
+ELSE IF @KEY = 'recordnotfound' 
+    SET @RETURN = -1
+ELSE IF @KEY = 'timestampmismatch' 
+    SET @RETURN = -2
+ELSE IF @KEY = 'failed'
+    SET @RETURN = -3
+ELSE IF @KEY = 'recordalreadyindatabase'
+    SET @RETURN = -4
+ELSE
+    SET @RETURN = -100
+RETURN @RETURN
+END

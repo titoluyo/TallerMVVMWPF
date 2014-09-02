@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SuperPeople>
+  <SuperPerson Id="1" Name="Name1" Allegiance="Allegiance1" Rank="1" Health="1" Strength="1" Speed="1" Resistance="1" Intellect="1"></SuperPerson>
+  <SuperPerson Id="2" Name="Name2" Allegiance="Allegiance2" Rank="2" Health="2" Strength="2" Speed="2" Resistance="2" Intellect="2"></SuperPerson>
+  <SuperPerson Id="3" Name="Name3" Allegiance="Allegiance3" Rank="3" Health="3" Strength="3" Speed="3" Resistance="3" Intellect="3"></SuperPerson>
+  <SuperPerson Id="4" Name="Name4" Allegiance="Allegiance4" Rank="4" Health="4" Strength="4" Speed="4" Resistance="4" Intellect="4"></SuperPerson>
+  <SuperPerson Id="5" Name="Name5" Allegiance="Allegiance5" Rank="5" Health="5" Strength="5" Speed="5" Resistance="5" Intellect="5"></SuperPerson>
+</SuperPeople>

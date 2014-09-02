@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ThePhoneCompany.Information.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="75" />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="LightGray" BorderThickness="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Border.Effect>
+                <DropShadowEffect />
+            </Border.Effect>
+            <Image MaxWidth="557" MaxHeight="309" Stretch="Uniform" Source="/ThePhoneCompany.Information;component/Assets/ThePhoneCompanyLogo.PNG" />
+        </Border>
+        <TextBlock Grid.Row="1" Text="Powererd by Prism v4" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontSize="16" />
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,35 @@
+﻿<Window 
+  xmlns:regionNames="clr-namespace:CookMe.Common.Infrastructure;assembly=CookMe.Common"
+    xmlns:shell="clr-namespace:CookMe"
+    xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+    x:Class="CookMe.ShellView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Cook Me" mc:Ignorable="d" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="319" Width="574">
+  <Window.Resources>
+    <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+  </Window.Resources>
+    <Grid d:DataContext="{d:DesignInstance shell:ShellViewModel}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="200" />
+    </Grid.ColumnDefinitions>
+    <ContentControl 
+      Grid.Row="1" Margin="7" 
+      prism:RegionManager.RegionName="{x:Static regionNames:RegionNames.ContentRegion}"
+      />
+    <ContentControl 
+      Grid.Column="1" Grid.Row="1" Margin="7" 
+      prism:RegionManager.RegionName="{x:Static regionNames:RegionNames.NavigationRegion}"
+      />
+    <TextBlock Text="Cook Me" />
+    <Button Grid.Column="1" Height="24" HorizontalAlignment="Right" VerticalAlignment="Top" Width="24" Name="ExitButton" Click="ExitButton_Click" Visibility="{Binding Path=IsInKioskMode, Converter={StaticResource booleanToVisibilityConverter}}">
+      <Image Source="/CookMe;component/Close.png" />
+    </Button>
+  </Grid>
+</Window>

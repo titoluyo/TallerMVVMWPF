@@ -1,0 +1,10 @@
+﻿<views:CategoryViewModel 
+    xmlns:views="clr-namespace:ThePhoneCompany.Inventory.Views"
+    xmlns:data="clr-namespace:ThePhoneCompany.Inventory.ThePhoneCompanyDataService">
+    <views:CategoryViewModel.Category>
+        <data:Category   
+            CategoryID="4"
+            Description="SOLID and DRY"
+         />
+    </views:CategoryViewModel.Category>
+</views:CategoryViewModel>

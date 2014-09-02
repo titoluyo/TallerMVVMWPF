@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E137C88A-CD1F-4927-A500-5F7FAC6CEB1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ocean</RootNamespace>
+    <AssemblyName>Ocean</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Ocean.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audit\AuditAttribute.cs" />
+    <Compile Include="Audit\SortByPropertyName.cs" />
+    <Compile Include="BusinessObject\BusinessEntityBase.cs" />
+    <Compile Include="Container\SimpleServiceContainer.cs" />
+    <Compile Include="DataGeneration\DataGenerator.cs" />
+    <Compile Include="Infrastructure\ClassToStringToDictionaryHelper.cs" />
+    <Compile Include="BusinessObject\IBusinessEntity.cs" />
+    <Compile Include="Audit\IBusinessEntityAudit.cs" />
+    <Compile Include="Infrastructure\GlobalConstants.cs" />
+    <Compile Include="Infrastructure\DatabaseReturnCode.cs" />
+    <Compile Include="Infrastructure\DataAccessException.cs" />
+    <Compile Include="ExtensionMethods\DateTimeExtensions.cs" />
+    <Compile Include="Infrastructure\ObservableObject.cs" />
+    <Compile Include="Infrastructure\PropertySupport.cs" />
+    <Compile Include="OceanValidation\BankRoutingNumberRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\ComparePropertyRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\CompareValueRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\CreditCardNumberRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\DomainRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\NotNullRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\RangeRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\RegularExpressionRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\RuleDescriptorBase.cs" />
+    <Compile Include="OceanValidation\StateAbbreviationRuleDescriptor.cs" />
+    <Compile Include="OceanValidation\StringLengthRuleDescriptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="InputStringFormatting\CharacterCasingFormattingAttribute.cs" />
+    <Compile Include="InputStringFormatting\CharacterCasing.cs" />
+    <Compile Include="InputStringFormatting\CamelCaseString.cs" />
+    <Compile Include="InputStringFormatting\FormatText.cs" />
+    <Compile Include="InputStringFormatting\CharacterCasingRulesManager.cs" />
+    <Compile Include="InputStringFormatting\SharedCharacterCasingRules.cs" />
+    <Compile Include="InputStringFormatting\CharacterCasingCheck.cs" />
+    <Compile Include="InputStringFormatting\CharacterCasingChecks.cs" />
+    <Compile Include="Infrastructure\ExceptionHelper.cs" />
+    <Compile Include="OceanValidation\BankRoutingNumberValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\ComparePropertyValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\CompareValueValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\CreditCardNumberValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\DomainValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\NotNullValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\RangeValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\RegularExpressionValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\StateAbbreviationValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\StringLengthValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\BaseValidatorAttribute.cs" />
+    <Compile Include="OceanValidation\Validator.cs" />
+    <Compile Include="OceanValidation\ValidationConstants.cs" />
+    <Compile Include="OceanValidation\RuleHandler.cs" />
+    <Compile Include="OceanValidation\AllowNullString.cs" />
+    <Compile Include="OceanValidation\ComparisonType.cs" />
+    <Compile Include="OceanValidation\ComplexFormulaType.cs" />
+    <Compile Include="OceanValidation\ConvertToType.cs" />
+    <Compile Include="OceanValidation\RangeBoundaryType.cs" />
+    <Compile Include="OceanValidation\RegularExpressionPatternType.cs" />
+    <Compile Include="OceanValidation\RequiredEntry.cs" />
+    <Compile Include="OceanValidation\RuleType.cs" />
+    <Compile Include="OceanValidation\IValidationRuleMethod.cs" />
+    <Compile Include="OceanValidation\SharedValidationRules.cs" />
+    <Compile Include="OceanValidation\ValidationError.cs" />
+    <Compile Include="OceanValidation\ValidationRulesList.cs" />
+    <Compile Include="OceanValidation\ValidationRulesManager.cs" />
+    <Compile Include="OceanValidation\ComparisonValidationRules.cs" />
+    <Compile Include="OceanValidation\DomainValidationRules.cs" />
+    <Compile Include="OceanValidation\StateAbbreviationValidator.cs" />
+    <Compile Include="OceanValidation\StringValidationRules.cs" />
+    <Compile Include="Security\Password.cs" />
+    <Compile Include="Security\RandomPassword.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+﻿<UserControl 
+    x:Class="Wpf.DataBinding.Introduction.DataBindingObjects"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="519" d:DesignWidth="852">
+    <Grid>
+        <Image Margin="11" Stretch="Uniform" Source="/Wpf.DataBinding;component/Resources/bindingobjects.png" />            
+    </Grid>
+</UserControl>

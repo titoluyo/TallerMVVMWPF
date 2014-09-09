@@ -15,6 +15,14 @@
         <DataTemplate x:Key="OpcionesTemplate" >
             <views:OpcionListView/>
         </DataTemplate>
+	
+	<!-- Seccion Busqueda -->
+        <DataTemplate x:Key="SeccionBusquedaTemplate" >
+            <views:SeccionView/>
+        </DataTemplate>
+        <DataTemplate x:Key="SeccionBusquedaListTemplate" >
+            <views:SeccionListBusquedaView/>
+        </DataTemplate>	
 
         <util:EnumMatchToBooleanConverter x:Key="Llave" />
     </Window.Resources>
@@ -62,8 +70,17 @@
                     <ContentControl Content="{Binding Path=SelectedPreguntaOpcion.OpcionList}" ContentTemplate="{StaticResource OpcionesTemplate}" Margin="10,42,-10,-42" />
                 </Grid>
             </TabItem>
-       
+ 
+             <TabItem Header="Busqueda" Width="85">
+                <Grid>
+                    <ContentControl Content="{Binding SeccionPrueba}" ContentTemplate="{StaticResource SeccionBusquedaTemplate}" Margin="0,0,0,0" VerticalAlignment="Top"></ContentControl>
+                    <ContentControl Visibility ="{Binding SeccionPrueba.Buscando}"  Content="{Binding SeccionList}" ContentTemplate="{StaticResource SeccionBusquedaListTemplate}" Margin="0,150,0,0" ></ContentControl>
+                </Grid>
+            </TabItem>
+	          
         </TabControl>
+        <Button Content="Grabar" Command="{Binding GrabarCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="350,184,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Cancelar" Command="{Binding CancelarCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="442,184,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
 
 
     </Grid>

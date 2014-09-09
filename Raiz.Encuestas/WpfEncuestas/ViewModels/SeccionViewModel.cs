@@ -3,16 +3,18 @@ using System.Windows.Input;
 using MicroMvvm;
 using WpfEncuestas.Common;
 using WpfEncuestas.Util;
+using WpfEncuestas.Views;
 
 namespace WpfEncuestas.ViewModels
 {
-    public class SeccionViewModel : ObservableObject
+    public class SeccionViewModel : Item1ViewModelBase<SeccionViewModel> //ObservableObject
     {
         #region ctor
 
         public SeccionViewModel()
         {
             PreguntaList = new PreguntaListViewModel();
+            Buscando = Visibility.Hidden;
         }
 
         #endregion
@@ -60,9 +62,10 @@ namespace WpfEncuestas.ViewModels
 
         #region Propiedades y campos otros
         public SeccionListViewModel Container { get; set; }
+        /*
         public Mode Mode { get; set; }
         protected SeccionViewModel _originalValue;
-
+        */
         #endregion
 
         #region Commands
@@ -79,7 +82,7 @@ namespace WpfEncuestas.ViewModels
             this.Container.Selected = this;
             this.Container.Editando = true; //Visibility.Visible;
         }
-
+        /*
         private ICommand _grabarCommand;
 
         public ICommand GrabarCommand
@@ -122,7 +125,7 @@ namespace WpfEncuestas.ViewModels
         {
             Nombre = _originalValue.Nombre;
         }
-
+        */
         private ICommand _eliminarCommand;
 
         public ICommand EliminarCommand
@@ -137,6 +140,46 @@ namespace WpfEncuestas.ViewModels
 
         #endregion
 
+        private ICommand _buscarCommand;
+        public ICommand BuscarCommand
+        {
+            get { return _buscarCommand ?? (_buscarCommand = new CommandBase(i => Buscar(), null)); }
+        }
+
+        //private SeccionListViewModel _busqueda;
+        private Visibility _buscando;
+
+        public Visibility Buscando
+        {
+            get { return _buscando; }
+            set
+            {
+                if (_buscando == value)return;
+                _buscando = value;
+                RaisePropertyChanged(() => Buscando);
+            }
+        }
+        private void Buscar()
+        {
+            //_busqueda = new SeccionListViewModel(this);
+            Container.SeccionEncontrada = this;
+            Buscando = Visibility.Visible;
+        }
+
+        private ICommand _seleccionarCommand;
+
+        public ICommand SeleccionarCommand
+        {
+            get { return _seleccionarCommand ?? (_seleccionarCommand = new CommandBase(i => Seleccionar(), null)); }
+        }
+
+        private void Seleccionar()
+        {
+            Container.SeccionEncontrada.Nombre = this.Nombre;
+            Container.SeccionEncontrada.Orden = this.Orden;
+            //Container.SeccionEncontrada = (SeccionViewModel) this.MemberwiseClone(); // DON'T WORK!
+            Buscando = Visibility.Hidden;
+        }
 
 
     }

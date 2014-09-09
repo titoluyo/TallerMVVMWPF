@@ -25,7 +25,7 @@ namespace WpfEncuestas.DataFake
             plantilla.Periodo = " ";
             plantilla.TodosPeriodos = true;
 
-            plantilla.SeccionList = new SeccionListViewModel();
+            //plantilla.SeccionList = new SeccionListViewModel();
             plantilla.SeccionList.Container = plantilla;
 
             plantilla.Variables = new ObservableCollection<VariableViewModel>

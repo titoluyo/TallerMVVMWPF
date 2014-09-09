@@ -57,15 +57,10 @@ namespace WpfEncuestas.Common
         {
             if (Mode == Mode.Edit)
             {
-                CancelarImplementacion();
+                
             }
             //Container.Editando = Visibility.Hidden;
             Mode = Mode.None;
-        }
-
-        protected virtual void CancelarImplementacion()
-        {
-            //Nombre = _originalValue.Nombre;
         }
 
         #endregion

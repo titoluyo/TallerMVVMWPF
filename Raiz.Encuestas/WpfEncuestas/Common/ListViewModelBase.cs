@@ -31,7 +31,7 @@ namespace WpfEncuestas.Common
             {
                 if (_items == value) return;
                 _items = value;
-                RaisePropertyChanged("Items");
+                RaisePropertyChanged(() => this.Items);
             }
         }
 
@@ -51,7 +51,7 @@ namespace WpfEncuestas.Common
             set
             {
                 _editando = value;
-                RaisePropertyChanged("Editando");
+                RaisePropertyChanged(() => Editando);
             }
         }
 
@@ -61,7 +61,7 @@ namespace WpfEncuestas.Common
             set
             {
                 _selected = value;
-                RaisePropertyChanged("Selected");
+                RaisePropertyChanged(() => Selected);
             }
         }
 

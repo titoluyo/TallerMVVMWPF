@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using MicroMvvm;
+using WpfEncuestas.Common;
 using WpfEncuestas.DataFake;
 
 namespace WpfEncuestas.ViewModels
 {
-    public class PlantillaViewModel : ObservableObject
+    public class PlantillaViewModel :  Item1ViewModelBase<PlantillaViewModel> //ObservableObject
     {
         #region ctor
 
         public PlantillaViewModel()
         {
             SeccionList = new SeccionListViewModel();
+            SeccionPrueba = new SeccionViewModel();
+            SeccionPrueba.Container = SeccionList;
         }
 
         #endregion
@@ -146,6 +149,35 @@ namespace WpfEncuestas.ViewModels
             }
         }
         #endregion
+
+        #region Commands
+
+        protected override void Grabar()
+        {
+            Console.WriteLine("Grabando en BD");
+            base.Grabar();
+        }
+
+        protected override void Cancelar()
+        {
+            Console.WriteLine("Cancelando....");
+            base.Cancelar();
+        }
+
+        #endregion
+
+        private SeccionViewModel _seccionPrueba;
+
+        public SeccionViewModel SeccionPrueba
+        {
+            get { return _seccionPrueba; }
+            set
+            {
+                if(_seccionPrueba == value) return;
+                _seccionPrueba = value;
+                RaisePropertyChanged(() => SeccionPrueba);
+            }
+        }
 
     }
 }

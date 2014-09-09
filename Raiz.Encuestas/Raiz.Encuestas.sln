@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfEncuestas", "WpfEncuestas\WpfEncuestas.csproj", "{D3F33E74-01BD-45B0-BB21-4AFA84C7F30A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroMvvm", "MicroMvvm\MicroMvvm.csproj", "{5F1256F8-A150-4BEC-81CE-1E349B7E44E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfEncuentas.Data", "WpfEncuentas.Data\WpfEncuentas.Data.csproj", "{BE240627-5829-4FED-A2F3-FDD8006CF0FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3F33E74-01BD-45B0-BB21-4AFA84C7F30A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F33E74-01BD-45B0-BB21-4AFA84C7F30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F33E74-01BD-45B0-BB21-4AFA84C7F30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F33E74-01BD-45B0-BB21-4AFA84C7F30A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1256F8-A150-4BEC-81CE-1E349B7E44E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1256F8-A150-4BEC-81CE-1E349B7E44E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1256F8-A150-4BEC-81CE-1E349B7E44E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1256F8-A150-4BEC-81CE-1E349B7E44E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE240627-5829-4FED-A2F3-FDD8006CF0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE240627-5829-4FED-A2F3-FDD8006CF0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE240627-5829-4FED-A2F3-FDD8006CF0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE240627-5829-4FED-A2F3-FDD8006CF0FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

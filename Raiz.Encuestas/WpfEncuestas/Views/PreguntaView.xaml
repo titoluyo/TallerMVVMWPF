@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WpfEncuestas.Views.PreguntaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="140" d:DesignWidth="600">
+    <Grid>
+        <Label Content="Pregunta" HorizontalAlignment="Left" Margin="14,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.132,0.038"/>
+        <TextBox Text="{Binding Pregunta}" HorizontalAlignment="Left" Height="22" Margin="138,53,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Variable" HorizontalAlignment="Left" Margin="281,51,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Variable}"  HorizontalAlignment="Left" Height="22" Margin="385,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Tipo de Pregunta" HorizontalAlignment="Left" Margin="14,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,0.538"/>
+        <RadioButton Content="Objetiva" HorizontalAlignment="Left" Margin="138,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.195,-0.562"/>
+        <RadioButton Content="Descriptiva" HorizontalAlignment="Left" Margin="270,97,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnGrabar" Content="Agregar" Command="{Binding GrabarCommand}" HorizontalAlignment="Left" Margin="401,97,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="BtnCancelar" Content="Cancelar" Command="{Binding CancelarCommand}" HorizontalAlignment="Left" Margin="494,97,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</UserControl>

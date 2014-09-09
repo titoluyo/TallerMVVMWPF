@@ -1,0 +1,157 @@
+﻿<Window
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:local="clr-namespace:WpfEncuestas.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        x:Class="WpfEncuestas.Views.ProcesoView"
+        Title="Proceso de Evaluacion" d:DesignWidth="824" d:DesignHeight="845.875">
+
+
+    <Grid >
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Row="0" Content=" " Width="160" Height="29" FontSize="14" RenderTransformOrigin="0.776,0.504" Margin="72,0,60,0"/>
+
+        <GroupBox Grid.Row="1" Header="Datos del Proceso"  Height="225" Width="749">
+            <Grid>
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="16" />
+                    <RowDefinition Height="Auto" MinHeight="42" />
+                    <RowDefinition Height="Auto" MinHeight="43" />
+                    <RowDefinition Height="Auto" MinHeight="42" />
+                    <RowDefinition Height="Auto" MinHeight="42" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="96" />
+                    <ColumnDefinition Width="Auto" MinWidth="361" />
+                    <ColumnDefinition Width="Auto" MinWidth="97" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Nombre : " Grid.Row="1" Grid.Column="0"/>
+                <Label Content="Descripción" Grid.Row="2" Grid.Column="0"/>
+                <Label Content="Periodicidad" Grid.Row="3" Grid.Column="0" RenderTransformOrigin="-11.868,-3.846"/>
+                <TextBox Text="{Binding  NombreProceso}" Grid.Row="1" Grid.Column="1" Margin="1,10,142,10"/>
+                <TextBox Text="{Binding DescripcionProceso}" Grid.Row="2" Grid.Column="1" Margin="0,0,142,0"/>
+                <!--<TextBox Text="{Binding PeriodicidadProceso}"  Grid.Row="3" Grid.Column="1" Margin="1,10" ToolTip="Ingrese el numero del mes que se ejecutará los procesos"/>-->
+                <ComboBox x:Name="CbxSalesPeriodicidad" SelectedItem="Selecione" IsSynchronizedWithCurrentItem="True" Grid.Row="3" Grid.Column="1" Margin="0,10,270,10">
+                    <ComboBoxItem Content="Diario" />
+                    <ComboBoxItem Content="Mensual" IsSelected="True"/>
+                </ComboBox>
+                <!--<Label Content="Fecha de Inicio " Grid.Row="4" Grid.Column="1"/>-->
+                <TextBox Text="{Binding PeriodicidadProceso}"  Grid.Row="3" Grid.Column="1" Margin="114,10,197,12" ToolTip="Ingrese el numero dia o mes que se volerá a ejecutar el proceso"/>
+                <Label Content="(*)Indique el tiempo que volverá realizar la Evaluacion " Grid.Row="3" Margin="92,34,40,11" Foreground="Navy" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                <Label Content="Fecha de Inicio " Grid.Row="1" Grid.Column="2"/>
+                <Label Content="" Grid.Row="2" Grid.Column="2"/>
+                <DatePicker Text="{Binding FechaIniProceso}" Grid.Row="1" Grid.Column="3" Margin="1,10,493,10"/>
+                <CheckBox Name="CheckFin" Grid.Row="2" Content="Seleccione si tiene Fecha Fin" Grid.Column="3" FontSize="12" RenderTransformOrigin="0.776,0.504" Margin="2,8,450,8"/>
+                <DatePicker IsEnabled="{Binding ElementName=CheckFin, Path=IsChecked}" Grid.Row="3" Grid.Column="3" Margin="0,10,493,10"/>
+
+
+            </Grid>
+        </GroupBox>
+
+
+        <GroupBox Grid.Row="2" Header="Datos del Periodo"  Height="162" Width="749">
+            <Grid Margin="0,0,0,48">
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="16" />
+                    <RowDefinition Height="Auto" MinHeight="42" />
+                    <RowDefinition Height="Auto" MinHeight="43" />
+                    <RowDefinition Height="Auto" MinHeight="42" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" MinWidth="214"  />
+                    <ColumnDefinition Width="143"   />
+                    <ColumnDefinition Width="Auto" MinWidth="273" />
+                </Grid.ColumnDefinitions>
+
+
+                <Label Content="Dia de Inicio: " Grid.Row="1" Grid.Column="0"/>
+                <Label Content="Duración de días: " Grid.Row="2" Grid.Column="0"/>
+                <!--<Label Content="Fecha de Fin:" Grid.Row="3" Grid.Column="0"/>-->
+                <!--<DatePicker Text="{Binding FechaIniPeriodo}" Grid.Row="1" Grid.Column="1" Margin="0,10,78,10"/>-->
+                <TextBox Text="{Binding FechaIniPeriodo}" Grid.Row="1" Grid.Column="1" Margin="0,10"/>
+                <TextBox Text="{Binding DuraciondiasPeriodo}" Grid.Row="2" Grid.Column="1" Margin="0,10"/>
+                <!--<TextBox Text="{Binding FechaFinPeriodo}"  Grid.Row="3" Grid.Column="1" Margin="0,10" />-->
+                <Label Content="Hora de Inicio: " Grid.Row="1" Grid.Column="2"/>
+                <Label Content="Duración de horas: " Grid.Row="2" Grid.Column="2"/>
+                <!--<Label Content="Periodo Actual: " Grid.Row="3" Grid.Column="2"/>-->
+                <ComboBox x:Name="CbxSalesPeriods" SelectedItem="Selecione" IsSynchronizedWithCurrentItem="True" Grid.Row="1" Grid.Column="3" Margin="0,10,112,10">
+                    <ComboBoxItem Content="10:00 am"/>
+                    <ComboBoxItem Content="11:00 am"/>
+                    <ComboBoxItem Content="12:00 pm"/>
+                </ComboBox>
+                <TextBox  Text="{Binding DuracionhorasPeriodo}" Grid.Row="2" Grid.Column="3" Margin="0,10,112,10"/>
+                <!--<TextBox  Text="{Binding PeriodoActual}" Grid.Row="3" Grid.Column="3" IsEnabled="True" Margin="0,10,112,10"/>-->
+
+
+            </Grid>
+        </GroupBox>
+
+
+
+        <GroupBox Grid.Row="3" Header="Datos de la Notificación"  Height="192" Width="749">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+
+                <DataGrid x:Name="GridLista" CanUserAddRows="True" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Height="139" Width="Auto" AutoGenerateColumns="False" ItemsSource="{Binding ListaNotificaciones}" Margin="10,21,79,-3" Grid.ColumnSpan="2" Grid.RowSpan="2" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Notificacion" IsReadOnly="True" Binding="{Binding Path=CodigoNotificacion}" />
+                        <DataGridTextColumn Header="Descripcion" IsReadOnly="True" Binding="{Binding Path=DescripcionNotificacion}"/>
+                        <DataGridTextColumn Header="Dia" IsReadOnly="True" Binding="{Binding Path=NumerodiaNotificacion}"/>
+                        <DataGridTextColumn Header="Fecha de Notificacion" IsReadOnly="True" Binding="{Binding Path=FechaNotificacionDescripcion}"/>
+                        <DataGridTextColumn Header="Prioridad" IsReadOnly="True" Binding="{Binding Path=PrioridadNotificacion}"/>
+                        <DataGridCheckBoxColumn Header="Seleccione"></DataGridCheckBoxColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="BtnAgregarfila" Content="Agregar Notificacion" Grid.Row="1" Grid.Column="1" Command="{Binding Path=ShowAddCommand}" Margin="620,142,-46,10" />
+
+
+            </Grid>
+
+        </GroupBox>
+
+
+        <CheckBox Grid.Row="4" Content="Notificación Diaria&#xA;"  Width="160" Height="29" FontSize="14" RenderTransformOrigin="0.776,0.504" Margin="2,0,450,0"/>
+
+        <!--<CheckBox Grid.Row="4" Content="Seleccione si desea notificar diariamente" HorizontalAlignment="Left" Width="477" Margin="183,0,0,0"/>-->
+
+        <Button Grid.Row="5" Content="Grabar"  Margin="546,1,190,0" Width="50"/>
+
+
+
+
+    </Grid>
+
+
+</Window>

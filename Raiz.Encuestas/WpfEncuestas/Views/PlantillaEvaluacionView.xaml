@@ -15,14 +15,14 @@
         <DataTemplate x:Key="OpcionesTemplate" >
             <views:OpcionListView/>
         </DataTemplate>
-	
-	<!-- Seccion Busqueda -->
+
+        <!-- Seccion Busqueda -->
         <DataTemplate x:Key="SeccionBusquedaTemplate" >
             <views:SeccionView/>
         </DataTemplate>
         <DataTemplate x:Key="SeccionBusquedaListTemplate" >
             <views:SeccionListBusquedaView/>
-        </DataTemplate>	
+        </DataTemplate>
 
         <util:EnumMatchToBooleanConverter x:Key="Llave" />
     </Window.Resources>
@@ -48,8 +48,8 @@
         <TextBox Text="{Binding Periodo}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="388,145,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.925,0.522"/>
         <CheckBox IsChecked="{Binding TodosPeriodos, Mode=TwoWay, Converter={StaticResource Llave},ConverterParameter=true}"    Content="Todo los periodos" Grid.Column="1" HorizontalAlignment="Left" Margin="562,150,-27,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Button Content="Grabar" Grid.Column="1" HorizontalAlignment="Left" Margin="594,1052,0,-706" Grid.Row="1" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.4,-0.545"/>
-        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="383" Margin="22,209,0,-217" Grid.Row="1" VerticalAlignment="Top" Width="671" RenderTransformOrigin="0.285,0.462" >
-             
+        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="383" Margin="41,297,-16,-303" Grid.Row="1" VerticalAlignment="Top" Width="671" RenderTransformOrigin="0.285,0.462" >
+
             <TabItem Header="Secciones" Content="{Binding SeccionList}" ContentTemplate="{StaticResource SeccionListTemplate}" Width="85">
             </TabItem>
             <TabItem Header="Preguntas" Width="85">
@@ -73,15 +73,65 @@
  
              <TabItem Header="Busqueda" Width="85">
                 <Grid>
-                    <ContentControl Content="{Binding SeccionPrueba}" ContentTemplate="{StaticResource SeccionBusquedaTemplate}" Margin="0,0,0,0" VerticalAlignment="Top"></ContentControl>
-                    <ContentControl Visibility ="{Binding SeccionPrueba.Buscando}"  Content="{Binding SeccionList}" ContentTemplate="{StaticResource SeccionBusquedaListTemplate}" Margin="0,150,0,0" ></ContentControl>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ContentControl Content="{Binding SeccionPrueba}" ContentTemplate="{StaticResource SeccionBusquedaTemplate}" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="0"></ContentControl>
+                    <ContentControl Visibility ="{Binding SeccionPrueba.Buscando}"  Content="{Binding SeccionList}" ContentTemplate="{StaticResource SeccionBusquedaListTemplate}" Grid.Row="1"></ContentControl>
                 </Grid>
             </TabItem>
 	          
         </TabControl>
-        <Button Content="Grabar" Command="{Binding GrabarCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="350,184,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Cancelar" Command="{Binding CancelarCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="442,184,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
 
+        <GroupBox Grid.Column="1" Header="Datos de Proceso" HorizontalAlignment="Left" Margin="54,173,0,0" Grid.Row="1" VerticalAlignment="Top" Height="109" Width="288">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Dia de inicio:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+                <Label Content="Dia de fin:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+                <Label Content=" 10-02-2014" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+                <Label Content=" No especifica" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Header="Plantilla para Periodo" HorizontalAlignment="Left" Margin="353,170,-10,0" Grid.Row="1" VerticalAlignment="Top" Height="123" Width="359">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29" />
+                    <RowDefinition Height="29" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Periodo:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+                <Label Content="Mes:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Width="65"></TextBox>
+                <Label Content="Año:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+                <TextBox Grid.Row="1" Grid.Column="3" Width="65"></TextBox>
+                <!--<CheckBox IsChecked="{Binding TodosPeriodos, Mode=TwoWay, Converter={StaticResource Llave},ConverterParameter=true}"    Content="Todo los periodos" Grid.Column="1" HorizontalAlignment="Left" Margin="524,103,0,0" Grid.Row="1" VerticalAlignment="Top"/>-->
+                <CheckBox Grid.Row="3" Grid.Column="0" Content="Todo los periodos"></CheckBox>
+            </Grid>
+        </GroupBox>
+
+        <Button Content="Grabar" Command="{Binding GrabarCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="536,55,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Cancelar" Command="{Binding CancelarCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="628,55,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

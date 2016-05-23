@@ -27,12 +27,11 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
         <ContentControl Content="{Binding SeccionBusqueda}" ContentTemplate="{StaticResource DetalleTemplate}" Grid.Column="0" Grid.Row="0" />
         
-        <ListView ItemsSource="{Binding Items}" HorizontalAlignment="Left" Height="157" Margin="10,40,0,0" VerticalAlignment="Top" Width="418" Grid.Column="0" Grid.Row="0">
+        <ListView ItemsSource="{Binding Items}" HorizontalAlignment="Left" Height="157" VerticalAlignment="Top" Width="418" Grid.Column="0" Grid.Row="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Orden" DisplayMemberBinding="{Binding Orden}" Width="100"/>

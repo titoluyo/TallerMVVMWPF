@@ -17,7 +17,7 @@ namespace WpfEncuestas.Util
             CultureInfo culture)
         {
             bool visibility = (bool)value;
-            return visibility ? Visibility.Visible : Visibility.Hidden;
+            return visibility ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(

@@ -21,7 +21,7 @@ namespace WpfEncuestas.DataFake
 
             plantilla.Titulo = "Evaluacíón de Desempeño";
             plantilla.Mensaje = "Complete el siguiente formulario";
-            plantilla.IdEvaluacion = "P001";
+            plantilla.IdEvaluacion = "Proceso de Evaluacion de Desempeño";
             plantilla.Periodo = " ";
             plantilla.TodosPeriodos = true;
 
@@ -36,26 +36,23 @@ namespace WpfEncuestas.DataFake
             };
 
 
-            //var algo = new PlantillaViewModel();
-            
-            
             
             var seccion1 = new SeccionViewModel
             {
                 Orden = 1,
                 Nombre = "Sección 9",
                 Container = plantilla.SeccionList,
-                //PreguntaList = new PreguntaListViewModel
-                //{
-                //    Items = new ObservableCollection<PreguntaViewModel>(),
-                    
-                //}
+                PreguntaList = new PreguntaListViewModel
+                {
+                    Items = new ObservableCollection<PreguntaViewModel>(),
+
+                }
             };
-            
-            //seccion1.PreguntaList.Container = seccion1;
-            //seccion1.PreguntaList.Items.Add(new PreguntaViewModel { Container = seccion1.PreguntaList, Pregunta = "Como te llamas?", Seccion = seccion1, Variable = "Desempeño", OpcionList = new OpcionListViewModel{Items = new ObservableCollection<OpcionViewModel>()}});
-            //seccion1.PreguntaList.Items.Add(new PreguntaViewModel { Container = seccion1.PreguntaList, Pregunta = "Cual es tu puesto?", Seccion = seccion1, Variable = "Desempeño", OpcionList = new OpcionListViewModel { Items = new ObservableCollection<OpcionViewModel>() } });
-            //seccion1.PreguntaList.Items.Add(new PreguntaViewModel { Container = seccion1.PreguntaList, Pregunta = "Pregunta 3?", Seccion = seccion1, Variable = "Desempeño", OpcionList = new OpcionListViewModel { Items = new ObservableCollection<OpcionViewModel>() } });
+
+            seccion1.PreguntaList.Container = seccion1;
+            seccion1.PreguntaList.Items.Add(new PreguntaViewModel { Container = seccion1.PreguntaList, Pregunta = "Como te llamas?", Seccion = seccion1, Variable = "Desempeño", OpcionList = new OpcionListViewModel { Items = new ObservableCollection<OpcionViewModel>() } });
+            seccion1.PreguntaList.Items.Add(new PreguntaViewModel { Container = seccion1.PreguntaList, Pregunta = "Cual es tu puesto?", Seccion = seccion1, Variable = "Desempeño", OpcionList = new OpcionListViewModel { Items = new ObservableCollection<OpcionViewModel>() } });
+            seccion1.PreguntaList.Items.Add(new PreguntaViewModel { Container = seccion1.PreguntaList, Pregunta = "Pregunta 3?", Seccion = seccion1, Variable = "Desempeño", OpcionList = new OpcionListViewModel { Items = new ObservableCollection<OpcionViewModel>() } });
 
             plantilla.SelectedSeccionPregunta = seccion1;
 

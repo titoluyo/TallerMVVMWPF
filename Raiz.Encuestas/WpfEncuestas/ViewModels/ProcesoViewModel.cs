@@ -11,79 +11,13 @@ namespace WpfEncuestas.ViewModels
      public class ProcesoViewModel : ObservableObject
     {
 
-          string _nombreProceso;
-          string _descripcionProceso;
-          string _fechainiProceso;
-          string _fechafinProceso;
-          int _periodicidadProceso;
 
-          
-
-          string _fechainiPeriodo;
-          string _horainiPeriodo;
-          int _duraciondiasPeriodo;
-          int _duracionhorasPeriodo;
-          string _fechafinPeriodo;  
-          string _periodoActual;
-          int _numeroNotificacionesxPerioodo;
-
-
-
-
-          public ProcesoViewModel()
-          {
-
-              PeriodosList = new PeriodoListaViewModel();
-
-          }
-
-
-
-         //Get the Items of PeriodosList
-         private PeriodoListaViewModel _periodosList;
-
-         public PeriodoListaViewModel PeriodosList
-         {
-             get { return _periodosList; }
-             set
-             {
-                 if (_periodosList == value) return;
-                 _periodosList = value;
-                 RaisePropertyChanged("PeriodosList");
-             }
-         }
-
-
-
-
-
-
-         private static ProcesoViewModel _instance = null;
-
-         public static ProcesoViewModel Instance()
-         {
-             return _instance ?? (_instance = ProcesoFake.CreateInstance());
-         }
-
-
-
-
-       //  ObservableCollection<NotificacionViewModel> _notificaciones = new ObservableCollection<NotificacionViewModel>();
-
-         public ObservableCollection<NotificacionViewModel> ListaNotificaciones { get; set; }
-
-         private ICommand showAddCommand;
-
-
-         //Collection de Periodos
-
-         
-
-       
-
-
-
-        #region Propiedades
+    #region Propiedades del Proceso
+        string _nombreProceso;
+        string _descripcionProceso;
+        string _fechainiProceso;
+        string _fechafinProceso;
+        int _periodicidadProceso;
 
 
         public string NombreProceso
@@ -97,10 +31,8 @@ namespace WpfEncuestas.ViewModels
                     RaisePropertyChanged("NombreProceso");
                 }
 
-
             }
         }
-
         public string DescripcionProceso
         {
             get { return _descripcionProceso; }
@@ -110,12 +42,9 @@ namespace WpfEncuestas.ViewModels
                 {
                     _descripcionProceso = value;
                     RaisePropertyChanged("DescripcionProceso");
-
                 }
-
             }
         }
-
         public string FechaIniProceso
         {
             get { return _fechainiProceso; }
@@ -126,11 +55,8 @@ namespace WpfEncuestas.ViewModels
                     _fechainiProceso = value;
                     RaisePropertyChanged("FechaIniProceso");
                 }
-
-
             }
         }
-
         public string FechaFinProceso
         {
             get { return _fechafinProceso; }
@@ -141,13 +67,9 @@ namespace WpfEncuestas.ViewModels
 
                     _fechafinProceso = value;
                     RaisePropertyChanged("FechaFinProceso");
-
                 }
-
-
             }
         }
-
         public int PeriodicidadProceso
         {
             get { return _periodicidadProceso; }
@@ -157,14 +79,21 @@ namespace WpfEncuestas.ViewModels
                 {
                     _periodicidadProceso = value;
                     RaisePropertyChanged("PeriodicidadProceso");
-
                 }
-
-
             }
-
         }
 
+        #endregion
+
+    #region Propiedades del Periodo
+        
+        string _fechainiPeriodo;
+        string _horainiPeriodo;
+        int _duraciondiasPeriodo;
+        int _duracionhorasPeriodo;
+        string _fechafinPeriodo;
+        string _periodoActual;
+        int _numeroNotificacionesxPerioodo;
 
         public string FechaIniPeriodo
         {
@@ -269,18 +198,122 @@ namespace WpfEncuestas.ViewModels
             }
         }
 
-
-
         #endregion
 
-       
+
+    
+          public ProcesoViewModel()
+          {
+
+              PeriodosList = new PeriodoListaViewModel();
+              FlujoList = new FlujoEvaluacionListViewModel();
+              ZonaList = new ZonaListViewModel();
+
+          }
+
+         //=============================================
+         //Get the Items of PeriodosList
+         private PeriodoListaViewModel _periodosList;
+
+         public PeriodoListaViewModel PeriodosList
+         {
+             get { return _periodosList; }
+             set
+             {
+                 if (_periodosList == value) return;
+                 _periodosList = value;
+                 RaisePropertyChanged("PeriodosList");
+             }
+         }
+
+         //=============================================
 
 
-       
+
+
+         //=============================================
+         //Get the Items of RolesList
+
+         private FlujoEvaluacionListViewModel _flujoList;
+
+         public FlujoEvaluacionListViewModel FlujoList
+         {
+             get { return _flujoList; }
+             set
+             {
+                 if (_flujoList == value) return;
+                 _flujoList = value;
+                 RaisePropertyChanged("FlujoList");
+             }
+         }
+
+         //=============================================
+
+
+         //=============================================
+         //Get the Items of ZonaList
+
+         private ZonaListViewModel _zonaList;
+
+         public ZonaListViewModel ZonaList
+         {
+             get { return _zonaList; }
+             set
+             {
+                 if(_zonaList == value)return;
+                 _zonaList = value;
+                 RaisePropertyChanged("ZonaList");
+             }
+         }
+
+
+         //=============================================
 
 
 
-         
+
+
+
+         private static ProcesoViewModel _instance = null;
+
+         public static ProcesoViewModel Instance()
+         {
+             return _instance ?? (_instance = ProcesoFake.CreateInstance());
+         }
+
+
+
+
+       //  ObservableCollection<NotificacionViewModel> _notificaciones = new ObservableCollection<NotificacionViewModel>();
+
+         public ObservableCollection<NotificacionViewModel> ListaNotificaciones { get; set; }
+
+         private ICommand showAddCommand;
+
+
+
+         #region selected options
+
+         private PeriodosViewModel _selectedPeriodoProceso;
+
+         public PeriodosViewModel SelectedPeriodoProceso
+         {
+             get { return _selectedPeriodoProceso; }
+             set
+             {
+                 if(_selectedPeriodoProceso == value) return;
+                 _selectedPeriodoProceso = value;
+                 RaisePropertyChanged("SelectedPeriodoProceso");
+             }
+         }
+
+
+
+         #endregion
+
+
+
+
          public ICommand ShowAddCommand
          {
              get
@@ -291,7 +324,6 @@ namespace WpfEncuestas.ViewModels
                  }
 
                  return showAddCommand;
-
 
              }
          }

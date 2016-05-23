@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfEncuestas.ViewModels;
 
 namespace WpfEncuestas.Views
 {
@@ -23,6 +24,8 @@ namespace WpfEncuestas.Views
         public FlujoDetailView()
         {
             InitializeComponent();
+            this.DataContext = ProcesoViewModel.Instance();
+
         }
     }
 }

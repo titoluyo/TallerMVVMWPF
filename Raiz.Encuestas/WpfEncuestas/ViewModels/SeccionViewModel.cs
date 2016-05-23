@@ -138,6 +138,26 @@ namespace WpfEncuestas.ViewModels
             Container.Items.Remove(this);
         }
 
+        protected override void Grabar()
+        {
+            if (Mode == Mode.Add)
+            {
+                Container.Items.Add(this);
+            }
+            base.Grabar();
+            Container.Editando = false; // Visibility.Hidden;
+        }
+
+        protected override void Cancelar()
+        {
+            if (Mode == Mode.Edit)
+            {
+                Nombre = _originalValue.Nombre;
+            }
+            base.Cancelar();
+            Container.Editando = false; // Visibility.Hidden;
+        }
+
         #endregion
 
         private ICommand _buscarCommand;

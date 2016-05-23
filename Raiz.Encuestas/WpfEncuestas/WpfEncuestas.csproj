@@ -92,11 +92,14 @@
     </Compile>
     <Compile Include="Sevice\ServiceProvider.cs" />
     <Compile Include="Sevice\UnityServiceLocator.cs" />
+    <Compile Include="Util\BoolToOppositeBoolConverter.cs" />
     <Compile Include="Util\BootStrapper.cs" />
     <Compile Include="Util\EnumMatchToBooleanConverter.cs" />
     <Compile Include="Util\Mode.cs" />
     <Compile Include="Util\VisibilityConverter.cs" />
     <Compile Include="ViewModels\DataGridDisplayViewModel .cs" />
+    <Compile Include="ViewModels\FlujoEvaluacionListViewModel.cs" />
+    <Compile Include="ViewModels\FlujoEvaluacionViewModel.cs" />
     <Compile Include="ViewModels\OpcionListViewModel.cs" />
     <Compile Include="ViewModels\OpcionViewModel.cs" />
     <Compile Include="ViewModels\PeriodoListaViewModel.cs" />
@@ -110,6 +113,8 @@
     <Compile Include="ViewModels\SeccionListViewModel.cs" />
     <Compile Include="ViewModels\SeccionViewModel.cs" />
     <Compile Include="ViewModels\VariableViewModel.cs" />
+    <Compile Include="ViewModels\ZonaListViewModel.cs" />
+    <Compile Include="ViewModels\ZonaViewModel.cs" />
     <Compile Include="Views\FlujoDetailView.xaml.cs">
       <DependentUpon>FlujoDetailView.xaml</DependentUpon>
     </Compile>

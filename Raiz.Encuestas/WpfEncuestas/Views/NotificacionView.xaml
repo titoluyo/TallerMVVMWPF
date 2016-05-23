@@ -5,7 +5,7 @@
         xmlns:viewModels="clr-namespace:WpfEncuestas.ViewModels"
         xmlns:wpfEncuestas="clr-namespace:WpfEncuestas"
         xmlns:util="clr-namespace:WpfEncuestas.Util"
-        Title="AGREGAR NOTIFICACION" Height="420" Width="460">
+        Title="AGREGAR NOTIFICACION" Height="420" Width="490">
 
     <Window.DataContext>
         <!-- Declaratively create an instance of our SongViewModel -->
@@ -20,23 +20,23 @@
 
     <Grid Margin="0,-19,-8,-5" RenderTransformOrigin="0.459,0.509">
         <Label Content="" HorizontalAlignment="Left" Margin="146,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.289,-0.192"/>
-        <Label Content="Descripción :" HorizontalAlignment="Left" Margin="31,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.789,-0.538"/>
-        <Label Content="Ingrese dia a Notificar" HorizontalAlignment="Left" Margin="31,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,0.269"/>
-        <Label Content="(*)Dia que se realizará la notificacion "  Margin="31,174,101,208" Foreground="Navy"/>
-        <Label Content="Seleciona la Fecha a Notificar:" HorizontalAlignment="Left" Margin="31,205,0,0" VerticalAlignment="Top"/>
-        <RadioButton GroupName="Notificacion" Content="Antes de Inicio" HorizontalAlignment="Left" Margin="41,239,0,0" VerticalAlignment="Top" 
+        <Label Content="Descripción :" HorizontalAlignment="Left" Margin="36,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.789,-0.538"/>
+        <Label Content="Ingrese dia de Anticipación" HorizontalAlignment="Left" Margin="37,245,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,0.269"/>
+        <Label Content="(*) Si ingresa 4 y seleccionó Antes, el sistema notificará antes del inicio del proceso "  Margin="31,276,10,106" Foreground="Navy"/>
+        <Label Content="La notificacion será  :" HorizontalAlignment="Left" Margin="34,161,0,0" VerticalAlignment="Top"/>
+        <RadioButton GroupName="Notificacion" Content="Antes de Inicio del Proceso" HorizontalAlignment="Left" Margin="41,210,0,0" VerticalAlignment="Top" 
                      IsChecked="{Binding Path=FechaNotificacion, Mode=TwoWay,
                                  Converter={StaticResource Llave},
                                  ConverterParameter=true}"/>
-        <RadioButton GroupName="Notificacion" Content="Antes de Fin" HorizontalAlignment="Left" Margin="235,239,0,0" VerticalAlignment="Top"  IsChecked="{Binding Path=FechaNotificacion, Mode=TwoWay, 
+        <RadioButton GroupName="Notificacion" Content="Antes de Fin del Proceso" HorizontalAlignment="Left" Margin="229,210,0,0" VerticalAlignment="Top"  IsChecked="{Binding Path=FechaNotificacion, Mode=TwoWay, 
                                  Converter={StaticResource Llave},
                                  ConverterParameter=false}"/>
-        <Label Content="Prioridad :" HorizontalAlignment="Left" Margin="41,277,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prioridad :" HorizontalAlignment="Left" Margin="41,306,0,0" VerticalAlignment="Top"/>
         <Button Content="Grabar Notificación" HorizontalAlignment="Left" Margin="283,350,0,0" VerticalAlignment="Top" Width="125" Command="{Binding AddContact}" Click="Click_Grabar"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="218,114,0,0" TextWrapping="Wrap" Text="{Binding DescripcionNotificacion}" VerticalAlignment="Top" Width="208" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="218,151,0,0" TextWrapping="Wrap" Text="{Binding NumerodiaNotificacion}" VerticalAlignment="Top" Width="79"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="220,248,0,0" TextWrapping="Wrap" Text="{Binding NumerodiaNotificacion}" VerticalAlignment="Top" Width="79"/>
         <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="218,269,0,0" TextWrapping="Wrap" Text="{Binding PrioridadNotificacion}" VerticalAlignment="Top" Width="208"/>-->
-        <ComboBox x:Name="CbxSalesPeriodicidad" SelectedItem="Selecione" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding PrioridadNotificacion}" IsSynchronizedWithCurrentItem="True"  Margin="220,279,0,0" Width="90" Height="25">
+        <ComboBox x:Name="CbxSalesPeriodicidad" SelectedItem="Selecione" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding PrioridadNotificacion}" IsSynchronizedWithCurrentItem="True"  Margin="220,305,0,0" Width="90" Height="25">
             <ComboBoxItem Content="Alta" />
             <ComboBoxItem Content="Media" IsSelected="True"/>
             <ComboBoxItem Content="Baja" />

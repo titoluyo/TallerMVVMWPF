@@ -48,13 +48,13 @@
                 <TextBox Text="{Binding  NombreProceso}" Grid.Row="1" Grid.Column="1" Margin="1,10,142,10"/>
                 <TextBox Text="{Binding DescripcionProceso}" Grid.Row="2" Grid.Column="1" Margin="0,0,142,0"/>
                 <!--<TextBox Text="{Binding PeriodicidadProceso}"  Grid.Row="3" Grid.Column="1" Margin="1,10" ToolTip="Ingrese el numero del mes que se ejecutará los procesos"/>-->
-                <ComboBox x:Name="CbxSalesPeriodicidad" SelectedItem="Selecione" IsSynchronizedWithCurrentItem="True" Grid.Row="3" Grid.Column="1" Margin="0,10,270,10">
+                <ComboBox IsEnabled="{Binding ElementName=CheckFin}" x:Name="CbxSalesPeriodicidad"  SelectedItem="Selecione" IsSynchronizedWithCurrentItem="True" Grid.Row="3" Grid.Column="1" Margin="0,10,270,10">
                     <ComboBoxItem Content="Diario" />
                     <ComboBoxItem Content="Mensual" IsSelected="True"/>
                 </ComboBox>
                 <!--<Label Content="Fecha de Inicio " Grid.Row="4" Grid.Column="1"/>-->
                 <TextBox Text="{Binding PeriodicidadProceso}"  Grid.Row="3" Grid.Column="1" Margin="114,10,197,12" ToolTip="Ingrese el numero dia o mes que se volerá a ejecutar el proceso"/>
-                <Label Content="(*)Indique el tiempo que volverá realizar la Evaluacion " Grid.Row="3" Margin="92,34,40,11" Foreground="Navy" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                <Label Content="(*)Indique el tiempo que se volverá a realizar la Evaluacion " Grid.Row="3" Margin="92,34,40,11" Foreground="Navy" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
                 <Label Content="Fecha de Inicio " Grid.Row="1" Grid.Column="2"/>
                 <Label Content="" Grid.Row="2" Grid.Column="2"/>
                 <DatePicker Text="{Binding FechaIniProceso}" Grid.Row="1" Grid.Column="3" Margin="1,10,493,10"/>

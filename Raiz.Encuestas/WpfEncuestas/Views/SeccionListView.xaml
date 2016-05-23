@@ -25,16 +25,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
         <ContentControl Content="{Binding Selected}" ContentTemplate="{StaticResource DetalleTemplate}" Grid.Column="0" Grid.Row="0" 
                         Visibility="{Binding Editando ,Mode=TwoWay, Converter={StaticResource VisibilityConverter}, ConverterParameter=true, FallbackValue=False}" />
-        
-        <ListView ItemsSource="{Binding Items}" HorizontalAlignment="Left" Height="157" Margin="10,115,0,0" VerticalAlignment="Top" Width="418" Grid.Column="0" Grid.Row="0">
+
+        <ListView ItemsSource="{Binding Items}" HorizontalAlignment="Left" Height="157" VerticalAlignment="Top" Width="418" Grid.Column="0" Grid.Row="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Orden" DisplayMemberBinding="{Binding Orden}" Width="100"/>
@@ -43,6 +43,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Command="{Binding AgregarCommand}" Content="Agregar Sección" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Width="106" Grid.Column="0" Grid.Row="0"/>
+        <Button Command="{Binding AgregarCommand}" Content="Agregar Sección" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Grid.Column="0" Grid.Row="1"/>
+
     </Grid>
 </UserControl>

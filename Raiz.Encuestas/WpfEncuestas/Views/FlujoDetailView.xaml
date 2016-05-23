@@ -3,18 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="140" d:DesignWidth="500">
+             mc:Ignorable="d" d:DesignWidth="530" Height="157">
     <Grid>
-        <Label Content="Evaluador" HorizontalAlignment="Left" Margin="31,19,0,0" VerticalAlignment="Top"/>
-        <Label Content="Evaluado" HorizontalAlignment="Left" Margin="31,62,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="137,23,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="136,65,0,0" VerticalAlignment="Top" Width="120"/>
-        <CheckBox Content="Evaluar Subordinado" HorizontalAlignment="Left" Margin="309,26,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Seleccionar Evaluados" HorizontalAlignment="Left" Margin="309,67,0,0" VerticalAlignment="Top"/>
-        <Label Content="Aplica para Zona" HorizontalAlignment="Left" Margin="31,103,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="135,106,0,0" VerticalAlignment="Top" Width="120"/>
-
+        <GroupBox Header="Datos para Evaluacion">
+            <Grid>
+                <Label Content="Evaluador" HorizontalAlignment="Left" Margin="31,19,0,0" VerticalAlignment="Top"/>
+                <Label Content="Evaluado" HorizontalAlignment="Left" Margin="31,62,0,0" VerticalAlignment="Top"/>
+                <ComboBox ItemsSource="{Binding Path=FlujoList.Items}" DisplayMemberPath="NombreRol" HorizontalAlignment="Left" Margin="137,23,0,0" VerticalAlignment="Top" Width="120"/>
+                <ComboBox HorizontalAlignment="Left" Margin="136,65,0,0" VerticalAlignment="Top" Width="120"/>
+                <CheckBox Content="Evaluar Subordinado" HorizontalAlignment="Left" Margin="309,26,0,0" VerticalAlignment="Top"/>
+                <CheckBox Content="Seleccionar Evaluados" HorizontalAlignment="Left" Margin="309,67,0,0" VerticalAlignment="Top"/>
+                <Label Content="Aplica para Zona" HorizontalAlignment="Left" Margin="31,103,0,0" VerticalAlignment="Top"/>
+                <ComboBox ItemsSource="{Binding Path=ZonaList.Items}" DisplayMemberPath="Zona" HorizontalAlignment="Left" Margin="135,106,0,0" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </GroupBox>
 
     </Grid>
 </UserControl>

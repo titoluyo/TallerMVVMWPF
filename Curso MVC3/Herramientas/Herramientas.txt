@@ -1,0 +1,6 @@
+- ADO.NET c# POCO Entity Generator (VS Extension) .- Generador de código para Entity Framework
+- NuGet Package Manager (VS Extension) .- Gestionar y agregar librerías al proyecto.
+- PowerCommands (VS Extension) .- Agrega comandos y funcionalidades extras al VS
+- Productivity Power Tools (VS Extension) .- Agrega comandos y funcionalidades extras al VS
+- tangible T4 Editor (VS Extension) .- Editor de plantillas para generación de código
+- Entity Designer Database Generation Power Pack (VS Extension) .- Nuevas capacidades a la generación de scripts con Entity Framework

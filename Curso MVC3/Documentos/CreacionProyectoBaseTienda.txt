@@ -1,0 +1,23 @@
+- Estructura de directorios y archivos
+- Creación de la solución dentro de src
+- Crear un proyecto Persistence
+- Agregar Model.edmx
+- Cambiar el nombre del entity container a dataContext
+- Agregar 2 entidades producto y categoria, ingresar los tipos de dato y la asociación, no crear asociación de lista de productos en categoría.
+- Agregar el poco generator
+- Crear el proyecto Domain
+- Agregar referencia de domain en persistence
+- Mover el Model.tt al proyecto domain
+- Cambiar el path del edmx en el model.tdd
+- Agregar en el Model.Context.tt el namespace de TiendaVirtual.Domain
+- Crear la clase ProductosRepository en persistence y el método Todos.
+- Agregar referencias de Domain y Persistence en Web.
+_ Crear el productos controller.
+- Creamos la vista
+- Modificamos la vista para que se vea mejor
+- Modificamos el routing para que el default se ProductosController
+- Creamos la BD.
+- Generamos la BD desde el modelo y ejecutamos el script.
+- Ejecutamos el script de Data
+- Copiamos la cadena de conección a Web.
+- Establecemos Web como proyecto de inicio.

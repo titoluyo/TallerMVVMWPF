@@ -1,0 +1,31 @@
+﻿@model Views.Models.Post
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>InlineCode</title>
+</head>
+<body>
+
+    <h1>@Model.Titulo</h1>
+    <p>@Model.Contenido</p>
+    <ul>
+        @foreach (var comentario in Model.Comentarios)
+        {
+            <li>@comentario.Texto</li>
+        }
+    </ul>
+    <div>
+        <p>Autor: Angel Núñez Salazar</p>
+        <p>Email: snahider@gmail.com</p>
+        <p>Twitter: @@snahider</p>
+    </div>
+
+
+</body>
+</html>

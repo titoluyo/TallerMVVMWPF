@@ -1,0 +1,115 @@
+{INFO}03/03 04:34:00 - Antes de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:34:10 - Luego de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:34:20 - Antes de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:34:22 - Luego de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:34:23 - Antes de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:34:23 - Luego de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:34:24 - Antes de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:34:24 - Luego de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:35:04 - Antes de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:35:04 - Luego de ejecutarse la acción - Controller:LoggingAttribute Action:.ctor
+{INFO}03/03 04:39:51 - OnActionExecuting controller:Productos action:Index
+{INFO}03/03 04:39:52 - OnActionExecuted controller:Productos action:Index
+{INFO}03/03 04:41:12 - OnActionExecuting controller:Productos action:Index
+{INFO}03/03 04:41:13 - OnActionExecuted controller:Productos action:Index
+{INFO}03/03 04:49:12 - OnActionExecuting controller:Productos action:Index parameters, 1 result
+{INFO}03/03 04:49:13 - OnActionExecuted controller:Productos action:Index parameters resultViewResult
+{INFO}03/03 04:50:38 - OnActionExecuting controller:Productos action:Index parameters:(, 1) result:
+{INFO}03/03 04:50:38 - OnActionExecuted controller:Productos action:Index parameters:() result:ViewResult
+{INFO}03/03 04:52:40 - OnActionExecuting controller:Productos action:Index parameters:(libros, 1) result:
+{INFO}03/03 04:52:40 - OnActionExecuted controller:Productos action:Index parameters:() result:ViewResult
+{INFO}03/03 04:52:59 - OnActionExecuting controller:Productos action:Index parameters:(libros234234, 1) result:
+{INFO}03/03 04:52:59 - OnActionExecuted controller:Productos action:Index parameters:() result:ViewResult
+{INFO}03/03 04:54:00 - OnActionExecuting controller:Productos action:Index parameters:(,1) result:
+{INFO}03/03 04:54:01 - OnActionExecuted controller:Productos action:Index parameters:() result:ViewResult
+{INFO}03/03 04:54:08 - OnActionExecuting controller:Productos action:Index parameters:(,) result:
+{INFO}03/03 04:54:08 - OnActionExecuted controller:Productos action:Index parameters:() result:EmptyResult
+{ERROR}03/03 04:54:08 - OnException controller:Productos action:Index parameters:() result:
+System.ArgumentException: The parameters dictionary contains a null entry for parameter 'pagina' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Index(System.String, Int32)' in 'TiendaVirtual.Web.Controllers.ProductosController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/03 04:57:31 - OnActionExecuting controller:Productos action:Index parameters:(,1) result:
+{INFO}03/03 04:57:31 - OnActionExecuted controller:Productos action:Index parameters:() result:ViewResult
+{INFO}03/03 04:57:39 - OnActionExecuting controller:Productos action:Index parameters:(,) result:
+{INFO}03/03 04:57:39 - OnActionExecuted controller:Productos action:Index parameters:() result:EmptyResult
+{ERROR}03/03 04:57:39 - OnException controller:Productos action:Index parameters:() result:
+System.ArgumentException: The parameters dictionary contains a null entry for parameter 'pagina' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Index(System.String, Int32)' in 'TiendaVirtual.Web.Controllers.ProductosController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/03 04:59:28 - OnActionExecuting controller:Productos action:Index parameters:(,1) result:
+{INFO}03/03 04:59:29 - OnActionExecuted controller:Productos action:Index parameters:() result:ViewResult
+{INFO}03/03 04:59:38 - OnActionExecuting controller:Productos action:Index parameters:(,) result:
+{INFO}03/03 04:59:38 - OnActionExecuted controller:Productos action:Index parameters:() result:EmptyResult
+{ERROR}03/03 04:59:38 - OnException controller:Productos action:Index parameters:() result:
+System.ArgumentException: The parameters dictionary contains a null entry for parameter 'pagina' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Index(System.String, Int32)' in 'TiendaVirtual.Web.Controllers.ProductosController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/03 05:16:45 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 05:16:46 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 05:17:16 - OnActionExecuting controller:productos action:detalle parameters:[1] result:
+{INFO}03/03 05:17:16 - OnActionExecuted controller:productos action:detalle parameters:[] result:ContentResult
+{INFO}03/03 16:45:52 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 16:45:54 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 16:46:01 - OnActionExecuting controller:Productos action:Index parameters:[favicon.ico,1] result:
+{INFO}03/03 16:46:01 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 16:46:04 - OnActionExecuting controller:Productos action:Index parameters:[favicon.ico,1] result:
+{INFO}03/03 16:46:04 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:12:37 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:12:38 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:16:59 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:16:59 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:18:20 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:18:20 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:19:07 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:19:07 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:20:09 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:20:09 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:31:58 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:31:58 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:32:24 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:32:24 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:32:43 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:32:43 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:34:11 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:34:11 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/03 17:34:39 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/03 17:34:39 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult

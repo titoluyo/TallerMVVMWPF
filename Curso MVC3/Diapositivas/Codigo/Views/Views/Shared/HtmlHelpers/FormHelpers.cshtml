@@ -1,0 +1,13 @@
+﻿@model Views.Models.Post
+
+@{
+    ViewBag.Title = "FormHelpers";
+}
+
+<h2>FormHelpers</h2>
+
+@using (Html.BeginForm("editar", "productos", 
+        new { id=Model.Id}))
+{
+    @*Elementos del formulario*@
+}

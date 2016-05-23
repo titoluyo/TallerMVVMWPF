@@ -1,0 +1,48 @@
+﻿@model TiendaVirtual.Web.Areas.Administracion.Models.EditarProductoViewModel
+<h1>
+    Editar @Model.Nombre
+</h1>
+@using (@Html.BeginForm("Editar", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Nombre)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Nombre)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Precio)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Precio)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(x => x.InicioVentas)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.InicioVentas)
+    </div>
+    
+    <div class="editor-label">
+        @Html.Label("CategoriaId", "Categoria")
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("CategoriaId", Model.Categorias)
+    </div>
+        
+    <div class="editor-label">
+        Imagen
+    </div>
+    <div class="editor-field">
+        @if (Model.TieneImagen)
+        {
+            <img src="@Url.Action("imagen", "productos", new { area = "", id = @Model.Id })" alt="@Model.Nombre" />
+        }
+        <div>Cargar nueva imagen:<input name="archivo" type="file" value="Imagen" /></div>
+    </div>
+        
+    <p><input type="submit" value="Guardar" /></p>
+    @Html.ActionLink("Cancelar y regresar al listado", "Index")
+}

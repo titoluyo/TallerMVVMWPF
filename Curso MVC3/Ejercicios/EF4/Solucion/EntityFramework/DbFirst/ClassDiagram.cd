@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DbFirst.Entities" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgBAAAAAAAQAAAAAAAACAQAAAAJAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbFirst.Comment" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCABAAAAAAQEAAAAAAAAgDABAAAAAAAAACCAURAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbFirst.Post" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAAFAAAAABAAAABIAAEAAAAAAABAAUIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

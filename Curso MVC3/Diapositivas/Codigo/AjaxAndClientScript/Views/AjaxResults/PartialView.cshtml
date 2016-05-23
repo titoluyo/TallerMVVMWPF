@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "PartiaView";
+}
+
+<h2>PartiaView</h2>
+<a href="#">Click</a>
+
+<div id="productos">
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("a").click(function (e) {
+            e.preventDefault();
+            $.get("/ajaxresults/partialview", function (data) {
+                $("#productos").html(data);
+            });
+        });
+    });
+</script>

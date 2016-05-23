@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TiendaVirtual.Domain.Producto>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2 class="center_title_bar">Productos</h2>
+  
+@foreach (var producto in Model)
+{ 
+    <div class="prod_box">
+        <div class="center_prod_box">            
+            <h4 class="product_title">@producto.Nombre</h4>
+            <span class="price">Precio: @producto.Precio$</span>
+        </div>
+           
+        <div class="prod_details_tab">
+            <a href="#" class="prod_buy">Añadir a Carro</a>          
+            <a href="#" class="prod_details">Detalles</a>            
+        </div>                     
+    </div>
+}

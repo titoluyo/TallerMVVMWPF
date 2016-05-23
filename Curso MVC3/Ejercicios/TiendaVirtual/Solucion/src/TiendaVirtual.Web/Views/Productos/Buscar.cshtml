@@ -1,0 +1,11 @@
+﻿@model List<TiendaVirtual.Domain.Producto>
+@{
+    ViewBag.Title = "Buscar";
+}
+
+<h2 class="center_title_bar">Productos Encontrados</h2>
+  
+@foreach (var producto in Model)
+{ 
+    @Html.Partial("_producto",producto)
+}

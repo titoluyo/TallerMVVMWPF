@@ -1,0 +1,29 @@
+﻿@model Views.Models.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BuiltInHelpers</title>
+</head>
+<body>
+    @Html.TextBox("usuario")
+    @Html.Password("contraseña")
+    @Html.CheckBox("recordarContraseña")
+
+    @Html.TextBoxFor(x => x.Usuario)
+    @Html.PasswordFor(x => x.Contraseña)
+    @Html.CheckBoxFor(x => x.RecordarContraseña)
+
+    @Html.TextBox("titulo", "Mi primer post", 
+            new { atributo = "valor" })
+
+    <input type="text" name="titulo" 
+           value="Mi primer post" atributo="valor" />
+
+   @Html.TextBox("titulo", "Mi primer post", 
+            new { @class = "cssClass" } )
+
+</body>
+</html>

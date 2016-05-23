@@ -1,0 +1,17 @@
+﻿@model TiendaVirtual.Domain.Producto
+<div class="prod_box">
+    <div class="center_prod_box">
+        <h4 class="product_title">@Model.Nombre</h4>
+        <div class="product_img">
+            @if (Model.Imagen.Nombre != null)
+            {
+                <img src="@Url.Action("imagen", "productos", new { id = @Model.Id })" 
+                         alt="@Model.Nombre" title="@Model.Nombre" border="0" />
+            }
+        </div>
+        <span class="price">Precio: @Model.Precio$</span>
+    </div>
+    <div class="prod_details_tab">
+        <a href="#" class="prod_buy">Añadir a Carro</a> <a href="#" class="prod_details">Detalles</a>
+    </div>
+</div>

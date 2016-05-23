@@ -1,0 +1,413 @@
+{INFO}03/11 01:57:14 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 01:57:29 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{ERROR}03/11 01:57:32 - OnException controller:Productos action:Index parameters:[] result:
+System.Web.HttpCompileException (0x80004005): d:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Views\Productos\Producto.cshtml(8): error CS0103: The name 'producto' does not exist in the current context
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   at System.Web.Mvc.BuildManagerViewEngine.FileExists(ControllerContext controllerContext, String virtualPath)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.FindPartialView(ControllerContext controllerContext, String partialViewName, Boolean useCache)
+   at System.Web.Mvc.ViewEngineCollection.<>c__DisplayClass8.<FindPartialView>b__7(IViewEngine e)
+   at System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   at System.Web.Mvc.ViewEngineCollection.FindPartialView(ControllerContext controllerContext, String partialViewName)
+   at System.Web.Mvc.HtmlHelper.FindPartialView(ViewContext viewContext, String partialViewName, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model)
+   at ASP._Page_Views_Productos_Index_cshtml.Execute() in d:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Views\Productos\Index.cshtml:line 8
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.RunPage()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/11 01:57:32 - OnActionExecuting controller:Productos action:Index parameters:[favicon.ico,1] result:
+{INFO}03/11 01:57:34 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 01:57:35 - OnActionExecuting controller:Productos action:Index parameters:[favicon.ico,1] result:
+{INFO}03/11 01:57:35 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 01:57:35 - OnActionExecuting controller:Productos action:Index parameters:[favicon.ico,1] result:
+{INFO}03/11 01:57:35 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 01:58:18 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 01:58:18 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 01:58:19 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 01:58:19 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 01:58:19 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 01:58:19 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 01:59:21 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 01:59:21 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 01:59:23 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 01:59:23 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 01:59:23 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 01:59:23 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 01:59:28 - OnActionExecuting controller:productos action:buscar parameters:[cook] result:
+{INFO}03/11 01:59:28 - OnActionExecuted controller:productos action:buscar parameters:[] result:ViewResult
+{ERROR}03/11 01:59:29 - OnException controller:productos action:buscar parameters:[] result:
+System.Web.HttpCompileException (0x80004005): d:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Views\Productos\Buscar.cshtml(9): error CS1973: 'System.Web.Mvc.HtmlHelper<dynamic>' has no applicable method named 'Partial' but appears to have an extension method by that name. Extension methods cannot be dynamically dispatched. Consider casting the dynamic arguments or calling the extension method without the extension method syntax.
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   at System.Web.Mvc.BuildManagerViewEngine.FileExists(ControllerContext controllerContext, String virtualPath)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache)
+   at System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__b(IViewEngine e)
+   at System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   at System.Web.Mvc.ViewEngineCollection.FindView(ControllerContext controllerContext, String viewName, String masterName)
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/11 02:00:12 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:00:12 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:00:12 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:00:12 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:00:12 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:00:12 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:00:22 - OnActionExecuting controller:productos action:buscar parameters:[bike] result:
+{INFO}03/11 02:00:22 - OnActionExecuted controller:productos action:buscar parameters:[] result:ViewResult
+{ERROR}03/11 02:00:23 - OnException controller:productos action:buscar parameters:[] result:
+System.Web.HttpCompileException (0x80004005): d:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Views\Productos\Buscar.cshtml(9): error CS1973: 'System.Web.Mvc.HtmlHelper<dynamic>' has no applicable method named 'Partial' but appears to have an extension method by that name. Extension methods cannot be dynamically dispatched. Consider casting the dynamic arguments or calling the extension method without the extension method syntax.
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   at System.Web.Mvc.BuildManagerViewEngine.FileExists(ControllerContext controllerContext, String virtualPath)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache)
+   at System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__b(IViewEngine e)
+   at System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   at System.Web.Mvc.ViewEngineCollection.FindView(ControllerContext controllerContext, String viewName, String masterName)
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/11 02:00:54 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:00:54 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:00:54 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:00:54 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:00:54 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:00:54 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:00:59 - OnActionExecuting controller:productos action:buscar parameters:[bike] result:
+{INFO}03/11 02:00:59 - OnActionExecuted controller:productos action:buscar parameters:[] result:ViewResult
+{ERROR}03/11 02:01:00 - OnException controller:productos action:buscar parameters:[] result:
+System.Web.HttpCompileException (0x80004005): d:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Views\Productos\Buscar.cshtml(9): error CS1002: ; expected
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   at System.Web.Mvc.BuildManagerViewEngine.FileExists(ControllerContext controllerContext, String virtualPath)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache)
+   at System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__b(IViewEngine e)
+   at System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   at System.Web.Mvc.ViewEngineCollection.FindView(ControllerContext controllerContext, String viewName, String masterName)
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/11 02:02:49 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:02:50 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:02:50 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:02:50 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:02:50 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:02:50 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:02:57 - OnActionExecuting controller:productos action:buscar parameters:[mvc] result:
+{INFO}03/11 02:02:57 - OnActionExecuted controller:productos action:buscar parameters:[] result:ViewResult
+{INFO}03/11 02:02:58 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:02:58 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:03:55 - OnActionExecuting controller:productos action:buscar parameters:[a] result:
+{INFO}03/11 02:03:55 - OnActionExecuted controller:productos action:buscar parameters:[] result:ViewResult
+{INFO}03/11 02:03:55 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:03:55 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:03:55 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:03:55 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:07:04 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:07:05 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:07:05 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:07:05 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:07:05 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:07:05 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:08:40 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:08:40 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:09:36 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:09:36 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:09:36 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:09:36 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:09:36 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:09:37 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:09:51 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:09:51 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:11:04 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:11:04 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:11:05 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:11:05 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:11:05 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:11:06 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:17:59 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:17:59 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:18:00 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:18:00 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:18:00 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:18:00 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:18:11 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:18:11 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:18:11 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:18:11 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:18:11 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:18:11 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:18:16 - OnActionExecuting controller:productos action:buscar parameters:[a] result:
+{INFO}03/11 02:18:16 - OnActionExecuted controller:productos action:buscar parameters:[] result:ViewResult
+{INFO}03/11 02:18:16 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:18:16 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:18:16 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:18:16 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:38:32 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 02:38:32 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 02:38:35 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 02:38:35 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 02:38:35 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 02:38:35 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:31:44 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 16:32:01 - OnActionExecuted controller:Productos action:Index parameters:[] result:EmptyResult
+{ERROR}03/11 16:32:01 - OnException controller:Productos action:Index parameters:[] result:
+System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, TimeoutTimer timeout, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at TiendaVirtual.Persistence.Extensions.Pagination.ToPagedList[T](IQueryable`1 source, Int32 currentPage, Int32 pageSize) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Persistence\Extensions\Pagination.cs:line 11
+   at TiendaVirtual.Persistence.ProductosRepository.Buscar(String categoria, Int32 pagina, Int32 tamañoPagina) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Persistence\ProductosRepository.cs:line 29
+   at TiendaVirtual.Web.Controllers.ProductosController.Index(String categoria, Int32 pagina) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Controllers\ProductosController.cs:line 26
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/11 16:32:02 - OnActionExecuting controller:Productos action:Index parameters:[favicon.ico,1] result:
+{INFO}03/11 16:32:02 - OnActionExecuted controller:Productos action:Index parameters:[] result:EmptyResult
+{ERROR}03/11 16:32:02 - OnException controller:Productos action:Index parameters:[] result:
+System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at TiendaVirtual.Persistence.Extensions.Pagination.ToPagedList[T](IQueryable`1 source, Int32 currentPage, Int32 pageSize) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Persistence\Extensions\Pagination.cs:line 11
+   at TiendaVirtual.Persistence.ProductosRepository.Buscar(String categoria, Int32 pagina, Int32 tamañoPagina) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Persistence\ProductosRepository.cs:line 29
+   at TiendaVirtual.Web.Controllers.ProductosController.Index(String categoria, Int32 pagina) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Controllers\ProductosController.cs:line 26
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/11 16:32:05 - OnActionExecuting controller:Productos action:Index parameters:[favicon.ico,1] result:
+{INFO}03/11 16:32:05 - OnActionExecuted controller:Productos action:Index parameters:[] result:EmptyResult
+{ERROR}03/11 16:32:05 - OnException controller:Productos action:Index parameters:[] result:
+System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at TiendaVirtual.Persistence.Extensions.Pagination.ToPagedList[T](IQueryable`1 source, Int32 currentPage, Int32 pageSize) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Persistence\Extensions\Pagination.cs:line 11
+   at TiendaVirtual.Persistence.ProductosRepository.Buscar(String categoria, Int32 pagina, Int32 tamañoPagina) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Persistence\ProductosRepository.cs:line 29
+   at TiendaVirtual.Web.Controllers.ProductosController.Index(String categoria, Int32 pagina) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Controllers\ProductosController.cs:line 26
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/11 16:43:35 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 16:43:40 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:43:40 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 16:43:40 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:43:45 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 16:43:45 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 16:43:45 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:43:45 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:43:58 - OnActionExecuting controller:Productos action:Index parameters:[Deportes,1] result:
+{INFO}03/11 16:43:58 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:43:58 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 16:43:58 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:44:01 - OnActionExecuting controller:Productos action:Index parameters:[Películas y Música,1] result:
+{INFO}03/11 16:44:01 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:44:03 - OnActionExecuting controller:Productos action:Index parameters:[Libros,1] result:
+{INFO}03/11 16:44:03 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:44:03 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 16:44:03 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:44:07 - OnActionExecuting controller:Productos action:Index parameters:[Películas y Música,1] result:
+{INFO}03/11 16:44:07 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:44:07 - OnActionExecuting controller:Productos action:Index parameters:[Películas y Música,1] result:
+{INFO}03/11 16:44:07 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:44:09 - OnActionExecuting controller:Productos action:Index parameters:[Deportes,1] result:
+{INFO}03/11 16:44:09 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:44:09 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 16:44:09 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:45:10 - OnActionExecuting controller:Productos action:Index parameters:[Deportes,1] result:
+{INFO}03/11 16:45:10 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:45:10 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 16:45:10 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:45:14 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 16:45:14 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:45:31 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 16:45:31 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 16:45:32 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 16:45:32 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:45:32 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 16:45:32 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:45:36 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 16:45:36 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 16:45:38 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 16:45:38 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 17:02:53 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 17:02:53 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 17:02:55 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 17:02:55 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 17:02:55 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 17:02:55 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 17:05:21 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 17:05:21 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 17:05:22 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 17:05:22 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 17:05:22 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 17:05:22 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:28:37 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 21:28:42 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 21:28:46 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 21:28:46 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 21:28:46 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:28:46 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:28:49 - OnActionExecuting controller:Productos action:Index parameters:[favicon.ico,1] result:
+{INFO}03/11 21:28:50 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 21:29:16 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 21:29:16 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 21:29:16 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 21:29:16 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 21:29:16 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:29:16 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:30:58 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 21:30:58 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 21:31:01 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 21:31:01 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:31:01 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 21:31:01 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:31:56 - OnActionExecuting controller:productos action:imagen parameters:[10] result:
+{INFO}03/11 21:31:56 - OnActionExecuted controller:productos action:imagen parameters:[] result:EmptyResult
+{ERROR}03/11 21:31:56 - OnException controller:productos action:imagen parameters:[] result:
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path2
+   at System.IO.Path.Combine(String path1, String path2)
+   at TiendaVirtual.Web.Controllers.ProductosController.Imagen(Int32 id) in D:\Consulting\CursoMVC\Ejercicios\TiendaVirtual\Solucion\src\TiendaVirtual.Web\Controllers\ProductosController.cs:line 44
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+{INFO}03/11 21:32:27 - OnActionExecuting controller:Productos action:Index parameters:[,1] result:
+{INFO}03/11 21:32:27 - OnActionExecuted controller:Productos action:Index parameters:[] result:ViewResult
+{INFO}03/11 21:32:30 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 21:32:30 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 21:32:30 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:32:30 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:32:43 - OnActionExecuting controller:productos action:imagen parameters:[9] result:
+{INFO}03/11 21:32:43 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult
+{INFO}03/11 21:32:52 - OnActionExecuting controller:productos action:imagen parameters:[4] result:
+{INFO}03/11 21:32:52 - OnActionExecuted controller:productos action:imagen parameters:[] result:FilePathResult

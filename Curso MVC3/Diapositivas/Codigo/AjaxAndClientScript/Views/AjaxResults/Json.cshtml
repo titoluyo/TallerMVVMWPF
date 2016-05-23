@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Json";
+}
+<h2>
+    Json</h2>
+
+<a href="#">Click</a>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("a").click(function (e) {
+            e.preventDefault();
+            $.get("/ajaxresults/json", function (data) {
+                alert(data)
+            });
+        });
+    });
+</script>

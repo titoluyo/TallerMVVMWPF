@@ -1,0 +1,62 @@
+﻿@model IEnumerable<TiendaVirtual.Domain.Producto>
+<h1>
+    Listado de Productos
+</h1>
+@if (@TempData["Mensaje"] != null)
+{
+    <div class="Message">@TempData["Mensaje"]</div>
+}
+<table class="Grid">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Precio
+        </th>
+        <th>
+            Categoria
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Nombre
+            </td>
+            <td>
+                @String.Format("{0:F}", item.Precio)
+            </td>
+            <td>
+                @item.Categoria.Nombre
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }, new { @class = "delete-link" })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Crear Nuevo Producto", "Crear")
+</p>
+<script type="text/javascript">
+    $(function () {
+        $(".delete-link").click(function (e) {
+            e.preventDefault();
+            var link = $(this);
+            var url = link.attr("href");
+            $.ajax({
+                type: "POST",
+                url: url,
+                success: function (data) {
+                    link.parent().parent().fadeTo(500, 0, function () {
+                        $(this).remove();
+                    });
+                }
+            });
+        });
+    });
+</script>

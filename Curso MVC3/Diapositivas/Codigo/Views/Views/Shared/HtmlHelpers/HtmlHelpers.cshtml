@@ -1,0 +1,21 @@
+﻿@model Views.Models.Post
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>HtmlHelpers</title>
+</head>
+<body>
+
+    <input type="text" id="titulo" name="titulo" 
+           value="@ViewBag.Titulo" />
+
+    @Html.TextBox("titulo")
+
+</body>
+</html>

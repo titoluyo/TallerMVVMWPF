@@ -1,0 +1,30 @@
+﻿@model TiendaVirtual.Web.Areas.Administracion.Models.LoginViewModel
+
+<h1>
+    Log In
+</h1>
+<p>
+    Escriba sus datos para acceder a la parte administrativa
+</p>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Usuario)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.Usuario)
+        @Html.ValidationMessageFor(x=>x.Usuario)
+    </div>
+        
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Password)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.Password)
+        @Html.ValidationMessageFor(x=>x.Password)
+    </div>
+    <p>
+        <input type="submit" value="Log In" />
+    </p>
+}

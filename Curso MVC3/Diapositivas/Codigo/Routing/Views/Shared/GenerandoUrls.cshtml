@@ -1,0 +1,18 @@
+﻿
+
+<a href="/productos/detalle/@ViewBag.Id">
+    Ver Detalle
+</a>
+
+
+@Html.ActionLink("Mostrar Todos","Listar","Productos")
+
+@Html.ActionLink("Primera Página","Listar","Productos",
+                 new {pagina=1},null)
+
+<a href="@Url.Action("Listar","Productos")">
+    Mostrar Todos
+</a>
+
+@Html.RouteLink("Mostrar Libros","catalogo",new {categoria="Libros"})
+

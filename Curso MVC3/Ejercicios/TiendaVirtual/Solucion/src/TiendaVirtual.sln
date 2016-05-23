@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.Domain", "TiendaVirtual.Domain\TiendaVirtual.Domain.csproj", "{6422B9B7-DAE7-49F1-B010-855F26D51416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.Persistence", "TiendaVirtual.Persistence\TiendaVirtual.Persistence.csproj", "{002EAB67-FC18-4D0C-8CAF-4E6249D32F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.Web", "TiendaVirtual.Web\TiendaVirtual.Web.csproj", "{89092A07-349F-4E1E-982B-93EE86673437}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.UnitTests", "TiendaVirtual.UnitTests\TiendaVirtual.UnitTests.csproj", "{915807A3-0ACC-498C-A3FD-51147B47E502}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B66E08A-F22C-4BFD-BE41-2E4A547AD131}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TiendaVirtual.vsmdi = TiendaVirtual.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B99D5C0A-42E1-4C1B-9058-F42AE08CCD12}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TiendaVirtual.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6422B9B7-DAE7-49F1-B010-855F26D51416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6422B9B7-DAE7-49F1-B010-855F26D51416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6422B9B7-DAE7-49F1-B010-855F26D51416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6422B9B7-DAE7-49F1-B010-855F26D51416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{002EAB67-FC18-4D0C-8CAF-4E6249D32F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{002EAB67-FC18-4D0C-8CAF-4E6249D32F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{002EAB67-FC18-4D0C-8CAF-4E6249D32F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{002EAB67-FC18-4D0C-8CAF-4E6249D32F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89092A07-349F-4E1E-982B-93EE86673437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89092A07-349F-4E1E-982B-93EE86673437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89092A07-349F-4E1E-982B-93EE86673437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89092A07-349F-4E1E-982B-93EE86673437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915807A3-0ACC-498C-A3FD-51147B47E502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915807A3-0ACC-498C-A3FD-51147B47E502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915807A3-0ACC-498C-A3FD-51147B47E502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915807A3-0ACC-498C-A3FD-51147B47E502}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{915807A3-0ACC-498C-A3FD-51147B47E502} = {B99D5C0A-42E1-4C1B-9058-F42AE08CCD12}
+	EndGlobalSection
+EndGlobal

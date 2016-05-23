@@ -1,0 +1,17 @@
+﻿@model Models.Models.ClientValidation.Producto
+@{
+    ViewBag.Title = "ComoFunciona";
+}
+<h2>
+    ComoFunciona</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Nombre: 
+        @Html.TextBoxFor(x => x.Nombre)
+        @Html.ValidationMessageFor(x => x.Nombre)
+    </p>
+    <p>
+        <input type="submit" value="Enviar" />
+    </p>
+}

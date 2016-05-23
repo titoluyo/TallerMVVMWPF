@@ -1,0 +1,23 @@
+EJEMPLOS LENGUAJE DE CONSULTA LINQ
+http://msdn.microsoft.com/en-us/vcsharp/aa336746
+
+ESTRATEGIAS DE MAPEO TABLAS - OBJECTOS
+http://lwang00.wordpress.com/2007/11/04/entity-mapping-table-per-type-and-table-per-hierarchy/
+
+ENTITY FRAMEWORK POWER PACK
+http://www.sellsbrothers.com/posts/details/2327
+
+VISUAL STUDIO EXTENSIONS
+http://weblogs.asp.net/scottgu/archive/2010/05/03/visual-studio-2010-extension-manager-and-the-new-vs-2010-powercommands-extension.aspx
+
+VIEWMODEL PATTERNS
+http://geekswithblogs.net/michelotti/archive/2009/10/25/asp.net-mvc-view-model-patterns.aspx
+
+DROPDOWNLIST
+http://www.mikesdotnetting.com/Article/128/Get-The-Drop-On-ASP.NET-MVC-DropDownLists
+
+TEMPLATES
+http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html
+
+CLIENT VALIDATIONS
+http://devtrends.co.uk/blog/the-complete-guide-to-validation-in-asp.net-mvc-3-part-2

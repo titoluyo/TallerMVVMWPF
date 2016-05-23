@@ -1,0 +1,13 @@
+﻿@model Views.Models.Producto
+
+@{
+    ViewBag.Title = "MostrarPartialView";
+}
+
+<h2>MostrarPartialView</h2>
+
+@Html.Partial("_producto")
+
+
+@Html.Partial("_producto",producto)
+
